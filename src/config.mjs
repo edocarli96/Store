@@ -1,7 +1,7 @@
 export const SITE = {
 	name: 'PoliNetwork Store',
 
-	origin: 'https://polinetworkorg.github.io',
+	origin: 'https://store.polinetwork.org',
 	basePathname: '/',
 	trailingSlash: false,
 
