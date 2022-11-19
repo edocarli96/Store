@@ -1,24 +1,7 @@
 ---
-import { SITE } from '~/config.mjs';
-import { getCanonical, getHomePermalink } from '~/utils/permalinks';
-import Layout from '~/layouts/PageLayout.astro';
-
-import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
- 
-
-const meta = {
-	title: SITE.title,
-	description: SITE.description,
-	canonical: getCanonical(getHomePermalink()),
-};
+import Default from '~/layouts/Default.astro';
 ---
 
-<Layout {meta}>
-	<Hero />
-	<Features />
-
-
-
-
-</Layout>
+<Default>
+	<div class="text-amber-600">hello</div>
+</Default>

@@ -3,13 +3,11 @@ import { fileURLToPath } from 'url';
 
 import { defineConfig } from 'astro/config';
 
-import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import image from '@astrojs/image';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
-
-import { remarkReadingTime } from './src/utils/frontmatter.js';
+import WindiCSS from 'vite-plugin-windicss'
 
 import { SITE } from './src/config.mjs';
 
@@ -25,11 +23,6 @@ export default defineConfig({
 	output: 'static',
 
 	integrations: [
-		tailwind({
-			config: {
-				applyBaseStyles: false,
-			},
-		}),
 		sitemap(),
 		image({
 			serviceEntryPoint: '@astrojs/image/sharp',
@@ -42,12 +35,8 @@ export default defineConfig({
 		}),
 	],
 
-	markdown: {
-		remarkPlugins: [remarkReadingTime],
-		extendDefaultPlugins: true,
-	},
-
 	vite: {
+		plugins: [WindiCSS()],
 		resolve: {
 			alias: {
 				'~': path.resolve(__dirname, './src'),
