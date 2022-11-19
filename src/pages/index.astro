@@ -1,7 +1,7 @@
 ---
-import Default from '~/layouts/Default.astro';
+import Base from '~/layouts/Base.astro';
+import { Languages } from '~/utils/types';
 ---
-
-<Default>
+<Base title="Home" language={Languages.IT}>
 	<div class="text-amber-600">hello</div>
-</Default>
+</Base>

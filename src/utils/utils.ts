@@ -9,7 +9,7 @@ export function parseLanguage(language: string): Languages{
 }
 
 export function parseFrontmatter<T extends Record<string, any>>(frontmatter: T, language: Languages): T {
-        let a = copyRecord({}, frontmatter, language)
+        const a = copyRecord({}, frontmatter, language)
         //console.log("obj:", JSON.stringify(a), "\n\nrecord:", JSON.stringify(frontmatter))
         return a
 
