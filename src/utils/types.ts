@@ -3,6 +3,10 @@ export enum Languages {
     IT = "it", EN = "en"
   }
 
+export enum Schools {
+  IEEE = 'ieee', DESIGN = 'design', ICAT = 'icat', AUIC = 'auic'
+}
+
 export namespace Languages {
     export function toNum(language: Languages): number {
       return Languages.values().indexOf(language)
@@ -53,5 +57,18 @@ export class MultilangString {
         return firstElement;
       }
     }
+  }
+}
+
+
+export namespace Schools {
+  export function toNum(language: Schools): number {
+    return Schools.values().indexOf(language)
+  }
+
+  export function values(): string[]{
+    return (Object.values(Schools).filter(value => typeof value === 'string') as string[]).map(element => {
+      return element.toLowerCase()
+    });
   }
 }

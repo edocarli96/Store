@@ -1,0 +1,27 @@
+---
+import { Languages, Schools } from "~/utils/types";
+
+export async function getStaticPaths() {
+  let toReturn: {params: {school: string, lang: string}, props: {school: string, language: string}}[] = []
+  for (let index = 0; index < Schools.values().length; index++) {
+    const _school = Schools.values()[index];
+    for (let e = 0; e < Languages.values().length; e++) {
+      const _language = Languages.values()[e];
+        toReturn.push({
+          params: {
+            school: _school,
+            lang: _language
+          },
+          props: {
+            school: _school,
+            language: _language
+          }
+        })
+    }
+  }
+  return toReturn;
+}
+
+const { language, school } = Astro.props;
+---
+{language} - {school}

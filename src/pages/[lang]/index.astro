@@ -1,7 +1,7 @@
 ---
 import Card from '~/components/Card.astro';
 import Base from '~/layouts/Base.astro';
-import { Languages } from '~/utils/types';
+import { Languages, Schools } from '~/utils/types';
 
 export async function getStaticPaths() {
     return Languages.values().map((language) => {
@@ -32,7 +32,6 @@ const buttons = [
 ]
 
 const { language } = Astro.props;
-
 const langCode = Languages.toNum(language);
 ---
 
@@ -48,6 +47,7 @@ const langCode = Languages.toNum(language);
 				{buttons.map((button) => {
 					return <div class="md:w-sm max-w-xs m-auto"><Card text={button.text[langCode]} title={button.title[langCode]}/></div>
 				})}
+				
 			</div>
 		</div>
 	</section>
