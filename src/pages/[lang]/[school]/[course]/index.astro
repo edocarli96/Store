@@ -1,0 +1,34 @@
+---
+import { Languages } from "~/utils/types";
+import { getPCmap } from "~/utils/utils";
+
+
+export async function getStaticPaths() {
+  const schoolsToPCs = await getPCmap()
+  let toReturn: {params: {school: string, lang: string, course: string}, props: {school: string, language: string, course: string}}[] = []
+  for (let index = 0; index < schoolsToPCs.schools.length; index++) {
+    const _school = schoolsToPCs.schools[index]
+    for (let e = 0; e < _school.courses.length; e++) {
+      const _course = _school.courses[e];
+        for (let y = 0; y < Languages.values().length; y++) {
+            toReturn.push({
+                params: {
+                    school: _school.school,
+                    course: _course.course,
+                    lang: Languages.values()[y]
+                },
+                props: {
+                    school: _school.school,
+                    course: _course.course,
+                    language: Languages.values()[y]
+                }
+                })
+        }
+    }
+  }
+  return toReturn;
+}
+
+const { language, school, course } = Astro.props;
+---
+{language} - {school} - {course}

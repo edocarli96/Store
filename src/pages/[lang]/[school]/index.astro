@@ -1,5 +1,8 @@
 ---
-import { Languages, Schools } from "~/utils/types";
+import Card from "~/components/Card.astro";
+import Base from "~/layouts/Base.astro";
+import { Languages, Schools, SchoolToPCs } from "~/utils/types";
+import { getPCmap } from "~/utils/utils";
 
 export async function getStaticPaths() {
   let toReturn: {params: {school: string, lang: string}, props: {school: string, language: string}}[] = []
@@ -23,5 +26,28 @@ export async function getStaticPaths() {
 }
 
 const { language, school } = Astro.props;
+
+let schoolsToPCs: SchoolToPCs = await getPCmap()
+let this_school = schoolsToPCs.schools.find(schools => schools.school == school)
+
+const title = "Consiglio " + school
 ---
-{language} - {school}
+<Base title={title} language={language}>
+    <div class="max-w-8xl">
+		<section class="bg-white dark:bg-gray-900">
+			<div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+				<div class="max-w-screen-md mb-8 lg:mb-16">
+					<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Designed for business teams like yours</h2>
+				<p class="text-gray-500 sm:text-xl dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+			</div>
+			<div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0 justify-items-center">
+			  {
+          this_school != null && this_school.courses.map((course) => {
+              return <div class="md:w-sm max-w-xs m-auto"><Card text="ciao" title={course.course}/></div>
+            })}
+				
+			</div>
+		</div>
+	</section>
+	</div>
+</Base>

@@ -2,7 +2,7 @@
 import type { Languages } from '~/utils/types';
 import Navbar from '~/components/Navbar.astro';
 import 'virtual:windi.css';
-import Meta from '~/components/Meta.astro';
+import Footer from '~/components/Footer.astro';
 
 export interface Props {
 	title: string;
@@ -10,6 +10,8 @@ export interface Props {
 	language: Languages
 }
 
+const redirect = Astro.url.href.slice(-1) != '/'
+const slash_url = Astro.url.href + '/'
 
 const { title, language } = Astro.props;
 
@@ -19,6 +21,7 @@ const { title, language } = Astro.props;
 <html class="h-full w-full">
 <head>
 	<meta name="viewport" content="width=device-width" />
+	{redirect && <meta http-equiv="refresh" content={ `0; url=${ slash_url }` } />}
 	<title>PoliNetwork - { title }</title>
 	<meta charset="UTF-8">
 	<meta
@@ -60,9 +63,9 @@ const { title, language } = Astro.props;
 <body class="dark:bg-gray-900 h-full">
 	<Navbar title={title} language={language}/>
 	<slot/>
+	<Footer language={language} />
 </body>
 
 </html>
-
 
 

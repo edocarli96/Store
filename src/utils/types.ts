@@ -7,6 +7,30 @@ export enum Schools {
   IEEE = 'ieee', DESIGN = 'design', ICAT = 'icat', AUIC = 'auic'
 }
 
+export interface PcMap{
+  schools: SchoolToPCs[]
+}
+
+export interface SchoolToPCs{
+  schools: SchoolCourse[]
+}
+
+export interface SchoolCourse {
+    school: string
+    courses: CourseToPC[]
+}
+
+export interface CourseToPC{
+  course: string
+  pcs: PC[]
+}
+
+export interface PC {
+  name: string,
+  specs: string[],
+  price: number
+}
+
 export namespace Languages {
     export function toNum(language: Languages): number {
       return Languages.values().indexOf(language)
@@ -23,7 +47,7 @@ export namespace Languages {
       const langPages: string[] = [];
       for (let index = 0; index < Languages.values().length; index++) {
         path[1] = Languages.values()[index]
-        langPages.push(path.join(''))        
+        langPages.push(path.join('/'))        
       }
       return langPages
     }

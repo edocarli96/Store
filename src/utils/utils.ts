@@ -1,4 +1,4 @@
-import { Languages } from "./types";
+import { Languages, Schools, SchoolToPCs } from "./types";
 
 export function parseLanguage(language: string): Languages{
     if (language.toLowerCase() === 'it'){
@@ -49,3 +49,123 @@ export function copyRecord<T extends Record<string, any>>(obj: any, record: T, l
     return obj
 }
 
+export async function getPCmap(): Promise<SchoolToPCs> {
+        return {
+            "schools":[
+            {
+                "school": "ieee",
+                "courses":[
+                    {
+                        "course":"info",
+                        "pcs":[
+                        {
+                            "name":"ciao",
+                            "specs":[
+                                "i500",
+                                "182GB di RAM"
+                            ],
+                            "price":120000
+                        }
+                        ]
+                    },
+                    {
+                        "course":"info2",
+                        "pcs":[
+                        {
+                            "name":"ciao2",
+                            "specs":[
+                                "i500",
+                                "182GB di RAM"
+                            ],
+                            "price":120000
+                        }
+                        ]
+                    },
+                    {
+                        "course":"info3",
+                        "pcs":[
+                        {
+                            "name":"ciao3",
+                            "specs":[
+                                "i500",
+                                "182GB di RAM"
+                            ],
+                            "price":120000
+                        }
+                        ]
+                    },
+                    {
+                        "course":"mat",
+                        "pcs":[
+                        {
+                            "name":"ciao1",
+                            "specs":[
+                                "i5001",
+                                "123GB di RAM"
+                            ],
+                            "price":120000
+                        }
+                        ]
+                    }
+                ]
+            },
+            {
+                "school": "icat",
+                "courses":[
+                    {
+                        "course":"info",
+                        "pcs":[
+                        {
+                            "name":"ciao",
+                            "specs":[
+                                "i500",
+                                "182GB di RAM"
+                            ],
+                            "price":120000
+                        }
+                        ]
+                    },
+                    {
+                        "course":"info",
+                        "pcs":[
+                        {
+                            "name":"ciao2",
+                            "specs":[
+                                "i500",
+                                "182GB di RAM"
+                            ],
+                            "price":120000
+                        }
+                        ]
+                    },
+                    {
+                        "course":"info",
+                        "pcs":[
+                        {
+                            "name":"ciao3",
+                            "specs":[
+                                "i500",
+                                "182GB di RAM"
+                            ],
+                            "price":120000
+                        }
+                        ]
+                    },
+                    {
+                        "course":"mat",
+                        "pcs":[
+                        {
+                            "name":"ciao1",
+                            "specs":[
+                                "i5001",
+                                "123GB di RAM"
+                            ],
+                            "price":120000
+                        }
+                        ]
+                    }
+                ]
+            }
+            ]
+        }
+}

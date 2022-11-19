@@ -12,24 +12,12 @@ export async function getStaticPaths() {
   });
 }
 
-const buttons = [
-    {
-        title: ["ciao", "hello"],
-        text: ["ciao", "hello"]
-    },
-	{
-        title: ["ciao", "hello"],
-        text: ["ciao", "hello"]
-    },
-	{
-        title: ["ciao", "hello"],
-        text: ["ciao", "hello"]
-    },
-	{
-        title: ["ciao", "hello"],
-        text: ["ciao", "hello"]
-    }
-]
+const buttons = Schools.values().map(school => {
+	return {
+		title: [school, school],
+		text: ["testo scuola", "school text"]
+	}
+})
 
 const { language } = Astro.props;
 const langCode = Languages.toNum(language);
