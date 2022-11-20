@@ -1,6 +1,6 @@
 ---
 import MultipleSelectionPage from '~/layouts/MultipleSelectionPage.astro';
-import { Languages } from '~/utils/types';
+import { Languages, Schools } from '~/utils/types';
 
 export async function getStaticPaths() {
     return Languages.values().map((language) => {
@@ -11,24 +11,14 @@ export async function getStaticPaths() {
   });
 }
 
-const Sections = ["pc"]
-const Descriptions = [["Acquista PC consigliati per il tuo corso", "BUY PC ---"], ["Acquista PC consigliati per il tuo corso", "BUY PC ---"]]
+const buttons = Schools.values().map(school => {
+	return {
+		title: [school, school],
+		text: ["testo scuola", "school text"]
+	}
+})
 
 const { language } = Astro.props;
-const langCode = Languages.toNum(language);
-
-const buttons: {
-  title: string[];
-  text: string[];
-}[] = []
-
-for (let e = 0; e < Sections.length; e++) {
-  buttons.push({
-    title: [Sections[e], Sections[e]],
-    text: [Descriptions[e][langCode], Descriptions[e][langCode]]
-  })
-  
-}
 ---
 
 <MultipleSelectionPage language={language} buttons={buttons} 

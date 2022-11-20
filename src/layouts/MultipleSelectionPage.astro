@@ -15,7 +15,7 @@ const { language, title, buttons, main_text, main_title } = Astro.props;
 const langCode = Languages.toNum(language);
 ---
 <Base title={title[langCode]} language={language}>
-    <div class="max-w-8xl">
+    <div class="max-w-8xl m-auto">
 		<section class="bg-white dark:bg-gray-900">
 			<div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
 				<div class="max-w-screen-md mb-8 lg:mb-16">
