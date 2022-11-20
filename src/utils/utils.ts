@@ -1,4 +1,4 @@
-import { Languages, Schools, SchoolToPCs } from './types';
+import { Languages, SchoolToPCs } from './types';
 
 export function parseLanguage(language: string): Languages {
 	if (language.toLowerCase() === 'it') {
