@@ -28,12 +28,12 @@ const { language, school } = Astro.props;
 
 let schoolsToPCs: SchoolToPCs = await getPCmap();
 let this_school = schoolsToPCs.schools.find((schools) => schools.school == school);
-
-const buttons: { title: string[]; text: string[] }[] = this_school.courses.map((course) => {
+if(this_school == null) { throw new Error("PC Map is invalid", this_school)}
+const buttons: { title: string[]; text: string[]; path: string}[] = this_school.courses.map((course) => {
 	return {
 		title: course.course,
 		text: course.desc,
-    path: course.slug
+		path: course.slug
 	};
 });
 

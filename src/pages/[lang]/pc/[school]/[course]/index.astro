@@ -40,13 +40,15 @@ const langCode = Languages.toNum(language);
 
 let schoolsToPCs: SchoolToPCs = await getPCmap();
 let this_school = schoolsToPCs.schools.find((schools) => schools.school == school);
+if(this_school == null) { throw new Error("PC Map is invalid", this_school)}
 let this_course = this_school.courses.find((_course) => _course.course[langCode] == course);
-
+if(this_course == null) { throw new Error("PC Map is invalid", this_course)}
 const main_title = this_course.course;
 const main_text = this_course.desc;
 
 const pcs = this_course.pcs;
 const extra = this_course.extra;
+
 ---
 
 <Base title={main_title[0]} language={language}>
@@ -59,7 +61,7 @@ const extra = this_course.extra;
 					</h2>
 					<p class="text-gray-500 sm:text-xl dark:text-gray-400">{main_text[langCode]}</p>
 				</div>
-        <div style="padding-top:20px;">
+        <div class="text-gray-500 sm:text-md dark:text-gray-400 pt-4">
           {language == Languages.IT ? extra[0]: extra[1]}
         </div>
         <div class="max-w-screen-md mb-8 lg:mb-16">
