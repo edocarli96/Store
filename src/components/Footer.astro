@@ -2,32 +2,38 @@
 import { Languages } from '../utils/types';
 
 export interface Props {
-  language: Languages;
+	language: Languages;
 }
-
-const { language } = Astro.props as Props;
-
-const langCode = Languages.toNum(language);
 ---
 
 <footer class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900">
-    <div class="sm:flex sm:items-center sm:justify-between">
-        <a href="/" class="flex items-center mb-4 sm:mb-0">
-            <img src="https://raw.githubusercontent.com/PoliNetworkOrg/Logo/master/Logo.svg" class="mr-3 h-8" alt="PoliNetwork Logo" />
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PoliNetwork</span>
-        </a>
+	<hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+	<div class="sm:flex sm:items-center sm:justify-between">
+		<a href="/" class="flex items-center mb-4 sm:mb-0">
+			<img
+				src="https://raw.githubusercontent.com/PoliNetworkOrg/Logo/master/Logo.svg"
+				class="mr-3 h-8"
+				alt="PoliNetwork Logo"
+			/>
+			<span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PoliNetwork</span>
+		</a>
+	
+		<ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
+			<li>
+				<a href="https://polinetwork.org" class="mr-4 hover:underline md:mr-6"
+					>About Polinetwork (no profit, aps, ...)</a
+				>
+			</li>
+		</ul>
+	</div>
+    <div style="padding-top:30px;"></div>
+    <div>
         <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
-            <li>
-                <a class="mr-4 hover:underline md:mr-6 ">Disclaimer AMAZON</a>
-            </li>
-        </ul>
-        <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
-            <li>
-                <a href="https://polinetwork.org" class="mr-4 hover:underline md:mr-6 ">About Polinetwork (no profit, aps, ...)</a>
-            </li>
-        </ul>
+			<li>
+				<a href="https://programma-affiliazione.amazon.it/" class="mr-4 hover:underline md:mr-6"
+					>In qualità di Affiliato Amazon, "PoliNetwork APS" (associazione nonprofit), a costo zero per gli acquirenti, riceve un guadagno dagli acquisti idonei</a
+				>
+			</li>
+		</ul>
     </div>
-    <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-    <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="/" class="hover:underline">PoliNetwork™</a>. All Rights Reserved.
-    </span>
 </footer>
