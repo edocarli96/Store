@@ -56,116 +56,22 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 				courses: [
 					{
 						slug: 'info',
-						course: ['info', 'infoE'],
-						desc: ['boh', 'boheng'],
+						course: ['Informatica 🖥', 'Computer Science 🖥'],
+						desc: ['Ingegneria Informatica', 'Computer Science Engineering'],
 						pcs: [
 							{
-								name: ['ciao', 'ciaoE'],
+								name: ['Marca1', 'Marca1'],
 								specs: [
 									['i500', 'i500E'],
 									['182GB di RAM', 'RAME'],
 								],
 								stars: 4,
 								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
+								image: '/img/tools.jpg',
 								price: 120000,
-							},
-							{
-								name: ['ciao1', 'ciao1E'],
-								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
-								],
-								stars: 4,
-								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
-								price: 120000,
-							},
-							{
-								name: ['ciao3', 'ciao3E'],
-								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
-								],
-								stars: 4,
-								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
-								price: 120000,
-							},
+							}
 						],
-					},
-					{
-						slug: 'info1',
-						course: ['info1', 'info1E'],
-						desc: ['boh', 'boheng'],
-						pcs: [
-							{
-								name: ['ciao', 'ciaoE'],
-								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
-								],
-								stars: 4,
-								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
-								price: 120000,
-							},
-						],
-					},
-					{
-						slug: 'info2',
-						course: ['info2', 'info2E'],
-						desc: ['boh', 'boheng'],
-						pcs: [
-							{
-								name: ['ciao', 'ciaoE'],
-								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
-								],
-								stars: 4,
-								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
-								price: 120000,
-							},
-						],
-					},
-					{
-						slug: 'info3',
-						course: ['info3', 'info3E'],
-						desc: ['boh', 'boheng'],
-						pcs: [
-							{
-								name: ['ciao', 'ciaoE'],
-								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
-								],
-								stars: 4,
-								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
-								price: 120000,
-							},
-						],
-					},
-					{
-						slug: 'info4',
-						course: ['info4', 'info4E'],
-						desc: ['boh', 'boheng'],
-						pcs: [
-							{
-								name: ['ciao', 'ciaoE'],
-								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
-								],
-								stars: 4,
-								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
-								price: 120000,
-							},
-						],
-					},
+					}
 				],
 			},
 			{
@@ -188,79 +94,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								price: 120000,
 							},
 						],
-					},
-					{
-						slug: 'infoc',
-						course: ['info1', 'info1E'],
-						desc: ['boh', 'boheng'],
-						pcs: [
-							{
-								name: ['ciao', 'ciaoE'],
-								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
-								],
-								stars: 4,
-								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
-								price: 120000,
-							},
-						],
-					},
-					{
-						slug: 'infod',
-						course: ['info2', 'info2E'],
-						desc: ['boh', 'boheng'],
-						pcs: [
-							{
-								name: ['ciao', 'ciaoE'],
-								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
-								],
-								stars: 4,
-								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
-								price: 120000,
-							},
-						],
-					},
-					{
-						slug: 'infoq',
-						course: ['info3', 'info3E'],
-						desc: ['boh', 'boheng'],
-						pcs: [
-							{
-								name: ['ciao', 'ciaoE'],
-								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
-								],
-								stars: 4,
-								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
-								price: 120000,
-							},
-						],
-					},
-					{
-						slug: 'infoh',
-						course: ['info4', 'info4E'],
-						desc: ['boh', 'boheng'],
-						pcs: [
-							{
-								name: ['ciao', 'ciaoE'],
-								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
-								],
-								stars: 4,
-								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
-								price: 120000,
-							},
-						],
-					},
+					}
 				],
 			},
 			{
@@ -283,79 +117,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								price: 120000,
 							},
 						],
-					},
-					{
-						slug: 'infob',
-						course: ['info1', 'info1E'],
-						desc: ['boh', 'boheng'],
-						pcs: [
-							{
-								name: ['ciao', 'ciaoE'],
-								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
-								],
-								stars: 4,
-								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
-								price: 120000,
-							},
-						],
-					},
-					{
-						slug: 'infoc',
-						course: ['info2', 'info2E'],
-						desc: ['boh', 'boheng'],
-						pcs: [
-							{
-								name: ['ciao', 'ciaoE'],
-								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
-								],
-								stars: 4,
-								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
-								price: 120000,
-							},
-						],
-					},
-					{
-						slug: 'infod',
-						course: ['info3', 'info3E'],
-						desc: ['boh', 'boheng'],
-						pcs: [
-							{
-								name: ['ciao', 'ciaoE'],
-								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
-								],
-								stars: 4,
-								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
-								price: 120000,
-							},
-						],
-					},
-					{
-						slug: 'infoe',
-						course: ['info4', 'info4E'],
-						desc: ['boh', 'boheng'],
-						pcs: [
-							{
-								name: ['ciao', 'ciaoE'],
-								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
-								],
-								stars: 4,
-								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
-								price: 120000,
-							},
-						],
-					},
+					}
 				],
 			},
 			{
@@ -378,79 +140,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								price: 120000,
 							},
 						],
-					},
-					{
-						slug: 'infoht',
-						course: ['info1', 'info1E'],
-						desc: ['boh', 'boheng'],
-						pcs: [
-							{
-								name: ['ciao', 'ciaoE'],
-								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
-								],
-								stars: 4,
-								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
-								price: 120000,
-							},
-						],
-					},
-					{
-						slug: 'infohy',
-						course: ['info2', 'info2E'],
-						desc: ['boh', 'boheng'],
-						pcs: [
-							{
-								name: ['ciao', 'ciaoE'],
-								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
-								],
-								stars: 4,
-								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
-								price: 120000,
-							},
-						],
-					},
-					{
-						slug: 'info65',
-						course: ['info3', 'info3E'],
-						desc: ['boh', 'boheng'],
-						pcs: [
-							{
-								name: ['ciao', 'ciaoE'],
-								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
-								],
-								stars: 4,
-								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
-								price: 120000,
-							},
-						],
-					},
-					{
-						slug: 'infojy',
-						course: ['info4', 'info4E'],
-						desc: ['boh', 'boheng'],
-						pcs: [
-							{
-								name: ['ciao', 'ciaoE'],
-								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
-								],
-								stars: 4,
-								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
-								price: 120000,
-							},
-						],
-					},
+					}
 				],
 			},
 		],
