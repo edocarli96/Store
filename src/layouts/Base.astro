@@ -7,17 +7,14 @@ import Default from './Default.astro';
 
 export interface Props {
 	title: string;
-	show_back_to_home?: boolean,
-	language: Languages
+	show_back_to_home?: boolean;
+	language: Languages;
 }
 const { title, language } = Astro.props;
-
 ---
 
 <Default title={title}>
-		<Navbar title={title} language={language}/>
-		<slot/>
-		<Footer language={language} />
+	<Navbar title={title} language={language} />
+	<slot />
+	<Footer language={language} />
 </Default>
-
-

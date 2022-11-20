@@ -3,26 +3,31 @@ import MultipleSelectionPage from '~/layouts/MultipleSelectionPage.astro';
 import { Languages, Schools } from '~/utils/types';
 
 export async function getStaticPaths() {
-    return Languages.values().map((language) => {
-    return {
-      params: { lang: language },
-      props: { language },
-    };
-  });
+	return Languages.values().map((language) => {
+		return {
+			params: { lang: language },
+			props: { language },
+		};
+	});
 }
 
-const buttons = Schools.values().map(school => {
+const buttons = Schools.values().map((school) => {
 	return {
 		title: [school, school],
-		text: ["testo scuola", "school text"]
-	}
-})
+		text: ['testo scuola', 'school text'],
+	};
+});
 
 const { language } = Astro.props;
 ---
 
-<MultipleSelectionPage language={language} buttons={buttons} 
-title={["Store" , "Store"]} 
-main_text={["Here at PoliNetwork we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.", "Here at PoliNetwork we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.ENG"]} 
-main_title={["Designed for business teams like yours", "Designed for business teams like yoursE"]}>
-</MultipleSelectionPage>
+<MultipleSelectionPage
+	language={language}
+	buttons={buttons}
+	title={['Store', 'Store']}
+	main_text={[
+		'Here at PoliNetwork we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.',
+		'Here at PoliNetwork we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.ENG',
+	]}
+	main_title={['Designed for business teams like yours', 'Designed for business teams like yoursE']}
+/>
