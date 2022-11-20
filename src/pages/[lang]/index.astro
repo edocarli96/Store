@@ -3,36 +3,43 @@ import MultipleSelectionPage from '~/layouts/MultipleSelectionPage.astro';
 import { Languages } from '~/utils/types';
 
 export async function getStaticPaths() {
-    return Languages.values().map((language) => {
-    return {
-      params: { lang: language },
-      props: { language },
-    };
-  });
+	return Languages.values().map((language) => {
+		return {
+			params: { lang: language },
+			props: { language },
+		};
+	});
 }
 
-const Sections = ["pc"]
-const Descriptions = [["Acquista PC consigliati per il tuo corso", "Buy recommended PCs for your class"], ["Acquista PC consigliati per il tuo corso", "Buy recommended PCs for your class"]]
+const Sections = ['pc'];
+const Descriptions = [
+	['Acquista PC consigliati per il tuo corso', 'Buy recommended PCs for your class'],
+	['Acquista PC consigliati per il tuo corso', 'Buy recommended PCs for your class'],
+];
 
 const { language } = Astro.props;
 const langCode = Languages.toNum(language);
 
 const buttons: {
-  title: string[];
-  text: string[];
-}[] = []
+	title: string[];
+	text: string[];
+}[] = [];
 
 for (let e = 0; e < Sections.length; e++) {
-  buttons.push({
-    title: [Sections[e], Sections[e]],
-    text: [Descriptions[e][langCode], Descriptions[e][langCode]]
-  })
- 
+	buttons.push({
+		title: [Sections[e], Sections[e]],
+		text: [Descriptions[e][langCode], Descriptions[e][langCode]],
+	});
 }
 ---
 
-<MultipleSelectionPage language={language} buttons={buttons} 
-title={["title" , "titleE"]} 
-main_text={["Here at PoliNetwork we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.", "Here at PoliNetwork we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.ENG"]} 
-main_title={["Designed for business teams like yours", "Designed for business teams like yoursE"]}>
-</MultipleSelectionPage>
+<MultipleSelectionPage
+	language={language}
+	buttons={buttons}
+	title={['title', 'titleE']}
+	main_text={[
+		'Here at PoliNetwork we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.',
+		'Here at PoliNetwork we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.ENG',
+	]}
+	main_title={['Designed for business teams like yours', 'Designed for business teams like yoursE']}
+/>
