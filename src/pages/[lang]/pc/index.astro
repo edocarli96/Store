@@ -11,20 +11,36 @@ export async function getStaticPaths() {
 	});
 }
 
-const buttons = Schools.values().map((school) => {
-	return {
-		title: [school, school],
-		text: ['testo scuola', 'school text'],
-	};
-});
+const schools = [
+	{
+		title: ['IEEE', 'IEEE'],
+		path: 'ieee',
+		text: ['Descrizione scuola', 'School description'],
+	},
+	{
+		title: ['Design', 'Design'],
+		path: 'design',
+		text: ['Descrizione scuola', 'School description'],
+	},
+	{
+		title: ['Icat', 'Icat'],
+		path: 'icat',
+		text: ['Descrizione scuola', 'School description'],
+	},
+	{
+		title: ['Auic', 'Auic'],
+		path: 'auic',
+		text: ['Descrizione scuola', 'School description'],
+	},
+];
 
 const { language } = Astro.props;
 ---
 
 <MultipleSelectionPage
 	language={language}
-	buttons={buttons}
-	title={['Store', 'Store']}
+	buttons={schools}
+	title={['Computer 💻', 'Computer 💻']}
 	main_text={[
 		'Here at PoliNetwork we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.',
 		'Here at PoliNetwork we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.ENG',
