@@ -82,21 +82,22 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 				school: 'design',
 				courses: [
 					{
-						slug: 'infoc',
-						course: ['info', 'infoE'],
-						desc: ['boh', 'boheng'],
+						slug: 'fashion',
+						course: ['Design della moda 👗', 'Fashion design 👗'],
+						desc: ['Design della moda', 'Fashion design'],
 						extra:[],
 						pcs: [
 							{
-								name: 'ciao',
+								name: '2021 Apple MacBook Pro',
 								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
+									['14"', '14"'],
+									['512GB SSD', '512GB SSD'],
+									['16GB RAM','16GB RAM']
 								],
 								stars: 4,
-								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
-								price: 120000,
+								url: 'https://www.amazon.it/Apple-MacBook-8-core-GPU-14%E2%80%91core-512GB/dp/B09JQSRWV5/',
+								image: 'https://m.media-amazon.com/images/I/61cCf94xIEL._AC_SL1500_.jpg',
+								price: 2069,
 							},
 						],
 					}
@@ -106,13 +107,13 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 				school: 'auic',
 				courses: [
 					{
-						slug: 'infoa',
-						course: ['info', 'infoE'],
-						desc: ['boh', 'boheng'],
+						slug: 'todo',
+						course: ['todo', 'todoE'],
+						desc: ['todo', 'todoE'],
 						extra:[],
 						pcs: [
 							{
-								name:'ciao',
+								name:'todo',
 								specs: [
 									['i500', 'i500E'],
 									['182GB di RAM', 'RAME'],
@@ -120,7 +121,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								stars: 4,
 								url: 'https://polinetwork.org',
 								image: 'https://polinetwork.org',
-								price: 120000,
+								price: 1200,
 							},
 						],
 					}
@@ -130,13 +131,13 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 				school: 'icat',
 				courses: [
 					{
-						slug: 'info23',
-						course: ['info', 'infoE'],
-						desc: ['boh', 'boheng'],
+						slug: 'todo',
+						course: ['todo', 'todoE'],
+						desc: ['todo', 'todoE'],
 						extra:[],
 						pcs: [
 							{
-								name: 'ciao',
+								name: 'todo',
 								specs: [
 									['i500', 'i500E'],
 									['182GB di RAM', 'RAME'],
@@ -144,7 +145,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								stars: 4,
 								url: 'https://polinetwork.org',
 								image: 'https://polinetwork.org',
-								price: 120000,
+								price: 1200,
 							},
 						],
 					}
