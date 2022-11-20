@@ -11,7 +11,10 @@ export async function getStaticPaths() {
 	});
 }
 
-const Sections = ['pc'];
+const Sections = [{
+  title:'Computer',
+  path: "pc"
+}];
 const Descriptions = [
 	['Acquista PC consigliati per il tuo corso', 'Buy recommended PCs for your class'],
 	['Acquista PC consigliati per il tuo corso', 'Buy recommended PCs for your class'],
@@ -23,12 +26,14 @@ const langCode = Languages.toNum(language);
 const buttons: {
 	title: string[];
 	text: string[];
+  path?: string;
 }[] = [];
 
 for (let e = 0; e < Sections.length; e++) {
 	buttons.push({
-		title: [Sections[e], Sections[e]],
+		title: [Sections[e].title, Sections[e].title],
 		text: [Descriptions[e][langCode], Descriptions[e][langCode]],
+    path: Sections[e].path
 	});
 }
 ---

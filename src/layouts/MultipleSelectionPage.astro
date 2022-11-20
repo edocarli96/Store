@@ -1,35 +1,43 @@
 ---
-import Card from "~/components/Card.astro";
-import { Languages } from "~/utils/types";
-import Base from "./Base.astro";
+import Card from '~/components/Card.astro';
+import { Languages } from '~/utils/types';
+import Base from './Base.astro';
 
 export interface Props {
-    language: Languages,
-    title: string[],
-    main_text: string[],
-    main_title: string[],
-    buttons: {title: string[], text: string[]}[]
+	language: Languages;
+	title: string[];
+	main_text: string[];
+	main_title: string[];
+	buttons: { title: string[]; text: string[]; path?: string }[];
 }
 
 const { language, title, buttons, main_text, main_title } = Astro.props;
 const langCode = Languages.toNum(language);
 ---
+
 <Base title={title[langCode]} language={language}>
-    <div class="max-w-8xl m-auto">
+	<div class="max-w-8xl m-auto">
 		<section class="bg-white dark:bg-gray-900">
 			<div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
 				<div class="max-w-screen-md mb-8 lg:mb-16">
-					<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{main_title[langCode]}</h2>
-				<p class="text-gray-500 sm:text-xl dark:text-gray-400">{main_text[langCode]}</p>
+					<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+						{main_title[langCode]}
+					</h2>
+					<p class="text-gray-500 sm:text-xl dark:text-gray-400">{main_text[langCode]}</p>
+				</div>
+				<div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0 justify-items-center">
+					{
+						buttons != null &&
+							buttons.map((button) => {
+								return (
+									<div class="md:w-sm max-w-xs m-auto">
+										<Card path={button.path} text={button.text[langCode]} title={button.title[langCode]} />
+									</div>
+								);
+							})
+					}
+				</div>
 			</div>
-			<div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0 justify-items-center">
-			  {
-          buttons != null && buttons.map((button) => {
-              return <div class="md:w-sm max-w-xs m-auto"><Card text={button.text[langCode]} title={button.title[langCode]}/></div>
-            })}
-				
-			</div>
-		</div>
-	</section>
+		</section>
 	</div>
 </Base>
