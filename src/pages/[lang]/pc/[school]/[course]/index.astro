@@ -46,18 +46,25 @@ const main_title = this_course.course;
 const main_text = this_course.desc;
 
 const pcs = this_course.pcs;
+const extra = this_course.extra;
 ---
 
 <Base title={main_title[0]} language={language}>
 	<div class="max-w-8xl">
 		<section class="bg-white dark:bg-gray-900">
 			<div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-				<div class="max-w-screen-md mb-8 lg:mb-16">
+				<div class="max-w-screen-md">
 					<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
 						{main_title[langCode]}
 					</h2>
 					<p class="text-gray-500 sm:text-xl dark:text-gray-400">{main_text[langCode]}</p>
 				</div>
+        <div style="padding-top:20px;">
+          {language == Languages.IT ? extra[0]: extra[1]}
+        </div>
+        <div class="max-w-screen-md mb-8 lg:mb-16">
+
+        </div>
 				<div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0 justify-items-center">
 					{
 						pcs != null &&
@@ -65,13 +72,14 @@ const pcs = this_course.pcs;
 								return (
 									<div class="md:w-sm max-w-xs m-auto">
 										<ShoppingCard
-											title={pc.name[langCode]}
+											title={pc.name}
 											click_message={language == Languages.IT ? "Compra" : "Buy"}
 											url="image_source"
 											stars={pc.stars}
 											url={pc.url}
-											price={300.1}
+											price={pc.price}
 											image_source={pc.image}
+                      specs={pc.specs}
 										/>
 									</div>
 								);

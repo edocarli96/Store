@@ -24,11 +24,12 @@ export interface CourseToPC{
   slug: string
   course: string[],
   desc: string[]
-  pcs: PC[]
+  pcs: PC[],
+  extra: string[]
 }
 
 export interface PC {
-  name: string[],
+  name: string,
   specs: string[][],
   price: number,
   url: string,

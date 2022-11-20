@@ -58,17 +58,21 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						slug: 'info',
 						course: ['Informatica 🖥', 'Computer Science 🖥'],
 						desc: ['Ingegneria Informatica', 'Computer Science Engineering'],
+						extra: ['Ad informatica il software più pesante, prestazionalmente, è Vivado'],
 						pcs: [
 							{
-								name: ['Marca1', 'Marca1'],
+								name: 'MSI GF63 Thin',
 								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
+									['Intel I7-11800H', 'Intel I7-11800H'],
+									['RAM 16GB DDR4 3200MHz', 'RAM 16GB DDR4 3200MHz'],
+									['Nvidia RTX 3050, 4GB GDDR6','Nvidia RTX 3050, 4GB GDDR6'],
+									['512GB SSD M.2', '512GB SSD M.2'],
+									['15.6" FHD','15.6" FHD']
 								],
-								stars: 4,
-								url: 'https://polinetwork.org',
-								image: '/img/tools.jpg',
-								price: 120000,
+								stars: Math.round(4),
+								url: 'https://www.amazon.it/MSI-11UC-1014IT-Notebook-I7-11800H-Garanzia/dp/B0B21QFNLK/',
+								image: 'https://m.media-amazon.com/images/I/714ZF1iOqmL._AC_SL1500_.jpg',
+								price: 899.00,
 							}
 						],
 					}
@@ -81,9 +85,10 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						slug: 'infoc',
 						course: ['info', 'infoE'],
 						desc: ['boh', 'boheng'],
+						extra:[],
 						pcs: [
 							{
-								name: ['ciao', 'ciaoE'],
+								name: 'ciao',
 								specs: [
 									['i500', 'i500E'],
 									['182GB di RAM', 'RAME'],
@@ -104,9 +109,10 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						slug: 'infoa',
 						course: ['info', 'infoE'],
 						desc: ['boh', 'boheng'],
+						extra:[],
 						pcs: [
 							{
-								name: ['ciao', 'ciaoE'],
+								name:'ciao',
 								specs: [
 									['i500', 'i500E'],
 									['182GB di RAM', 'RAME'],
@@ -127,9 +133,10 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						slug: 'info23',
 						course: ['info', 'infoE'],
 						desc: ['boh', 'boheng'],
+						extra:[],
 						pcs: [
 							{
-								name: ['ciao', 'ciaoE'],
+								name: 'ciao',
 								specs: [
 									['i500', 'i500E'],
 									['182GB di RAM', 'RAME'],
