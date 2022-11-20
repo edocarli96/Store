@@ -33,6 +33,7 @@ const buttons: { title: string[]; text: string[] }[] = this_school.courses.map((
 	return {
 		title: course.course,
 		text: course.desc,
+    path: course.slug
 	};
 });
 
