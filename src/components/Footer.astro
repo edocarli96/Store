@@ -14,7 +14,7 @@ const { language } = Astro.props as Props;
 	<div class="sm:flex sm:items-center sm:justify-between">
 		<a href="/" class="flex items-center mb-4 sm:mb-0">
 			<img
-				src="https://raw.githubusercontent.com/PoliNetworkOrg/Logo/master/Logo.svg"
+				src="https://raw.githubusercontent.com/PoliNetworkOrg/Logo/master/Logo.png"
 				class="mr-3 h-8"
 				alt="PoliNetwork Logo"
 			/>
@@ -24,7 +24,20 @@ const { language } = Astro.props as Props;
 	<div style="padding-top:30px;"></div>
 	<ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
 		<li>
-			<a href="https://polinetwork.org" class="mr-4 hover:underline md:mr-6">About Polinetwork (no profit, aps, ...)</a>
+			<a href="https://polinetwork.org" class="mr-4 hover:underline md:mr-6"
+				>{
+					language == Languages.IT ? (
+						<span>
+							PoliNetwork è una associazione APS nonprofit che mira a costruire un network coeso di studenti
+							universitari
+						</span>
+					) : (
+						<span>
+							PoliNetwork is a non-profit APS association that aims to build a cohesive network of university students
+						</span>
+					)
+				}</a
+			>
 		</li>
 	</ul>
 	<div style="padding-top:10px;"></div>
@@ -39,13 +52,12 @@ const { language } = Astro.props as Props;
 					>{
 						language == Languages.IT ? (
 							<span>
-								In qualità di Affiliato Amazon, "PoliNetwork APS" (associazione nonprofit), a costo zero per gli
-								acquirenti, riceve un guadagno dagli acquisti idonei
+								In qualità di Affiliato Amazon, "PoliNetwork APS", a costo zero per gli acquirenti, riceve un guadagno
+								dagli acquisti idonei
 							</span>
 						) : (
 							<span>
-								As an Amazon Affiliate, "PoliNetwork APS" (non-profit association), at no cost to buyers, earns money
-								from qualifying purchases
+								As an Amazon Affiliate, "PoliNetwork APS", at no cost to buyers, earns money from qualifying purchases
 							</span>
 						)
 					}
