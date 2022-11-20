@@ -1,6 +1,6 @@
 ---
 import MultipleSelectionPage from '~/layouts/MultipleSelectionPage.astro';
-import { Languages, Schools } from '~/utils/types';
+import { Languages } from '~/utils/types';
 
 export async function getStaticPaths() {
 	return Languages.values().map((language) => {
@@ -15,22 +15,22 @@ const schools = [
 	{
 		title: ['IEEE', 'IEEE'],
 		path: 'ieee',
-		text: ['Descrizione scuola', 'School description'],
+		text: ['Scuola di Ingegneria Industriale dell\'Informazione', 'School of Industrial Information Engineering'],
 	},
 	{
 		title: ['Design', 'Design'],
 		path: 'design',
-		text: ['Descrizione scuola', 'School description'],
+		text: ['Scuola di Design', 'School of Design'],
 	},
 	{
 		title: ['Icat', 'Icat'],
 		path: 'icat',
-		text: ['Descrizione scuola', 'School description'],
+		text: ['Scuola di Ingegneria Civile, Ambientale e Territoriale', 'School of Civil, Environmental and Territorial Engineering'],
 	},
 	{
 		title: ['Auic', 'Auic'],
 		path: 'auic',
-		text: ['Descrizione scuola', 'School description'],
+		text: ['Scuola di Architettura Urbanistica e Ingegneria delle Costruzioni', 'School of Architecture Urban Planning and Construction Engineering'],
 	},
 ];
 
@@ -42,8 +42,8 @@ const { language } = Astro.props;
 	buttons={schools}
 	title={['Computer 💻', 'Computer 💻']}
 	main_text={[
-		'Here at PoliNetwork we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.',
-		'Here at PoliNetwork we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.ENG',
+		'Cerchi un computer adatto al tuo corso di laurea? Sei nel posto giusto!',
+		'Are you looking for a suitable computer for your degree course? You are in the right place!',
 	]}
-	main_title={['Designed for business teams like yours', 'Designed for business teams like yoursE']}
+	main_title={['Computer 💻', 'Computer 💻']}
 />
