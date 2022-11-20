@@ -42,8 +42,8 @@ let schoolsToPCs: SchoolToPCs = await getPCmap()
 let this_school = schoolsToPCs.schools.find(schools => schools.school == school)
 let this_course = this_school.courses.find(_course => _course.course[langCode] == course)
 
-const main_title = ["abc", "abcE"]
-const main_text = ["text", "textE"]
+const main_title = this_course.course
+const main_text = this_course.desc
 
 const pcs = this_course.pcs
 ---
