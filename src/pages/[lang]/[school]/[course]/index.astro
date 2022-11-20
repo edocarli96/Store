@@ -1,6 +1,9 @@
 ---
-import { Languages } from "~/utils/types";
+import ShoppingCard from "~/components/Shopping_Card.astro";
+import Base from "~/layouts/Base.astro";
+import { Languages, SchoolToPCs } from "~/utils/types";
 import { getPCmap } from "~/utils/utils";
+
 
 
 export async function getStaticPaths() {
@@ -10,25 +13,57 @@ export async function getStaticPaths() {
     const _school = schoolsToPCs.schools[index]
     for (let e = 0; e < _school.courses.length; e++) {
       const _course = _school.courses[e];
-        for (let y = 0; y < Languages.values().length; y++) {
-            toReturn.push({
-                params: {
-                    school: _school.school,
-                    course: _course.course,
-                    lang: Languages.values()[y]
-                },
-                props: {
-                    school: _school.school,
-                    course: _course.course,
-                    language: Languages.values()[y]
-                }
-                })
-        }
+      for (let y = 0; y < Languages.values().length; y++) {
+        const langCode = Languages.toNum(Languages.values()[y]);
+        toReturn.push({
+          params: {
+            school: _school.school,
+            course: _course.course[langCode],
+            lang: Languages.values()[y]
+          },
+          props: {
+            school: _school.school,
+            course: _course.course[langCode],
+            language: Languages.values()[y]
+          }
+        })
+      }
     }
   }
   return toReturn;
 }
 
 const { language, school, course } = Astro.props;
+
+const langCode = Languages.toNum(language);
+
+const main_title = ["abc", "abcE"]
+const main_text = ["text", "textE"]
+
+let schoolsToPCs: SchoolToPCs = await getPCmap()
+let this_school = schoolsToPCs.schools.find(schools => schools.school == school)
+let this_course = this_school.courses.find(_course => _course.course[langCode] == course)
+
+
+const pcs = this_course.pcs
 ---
-{language} - {school} - {course}
+<Base title="titolo" language={language}>
+  <div class="max-w-8xl">
+		<section class="bg-white dark:bg-gray-900">
+			<div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+				<div class="max-w-screen-md mb-8 lg:mb-16">
+					<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{main_title[langCode]}</h2>
+				<p class="text-gray-500 sm:text-xl dark:text-gray-400">{main_text[langCode]}</p>
+			</div>
+			<div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0 justify-items-center">
+			  {
+          pcs != null && pcs.map((pc) => {
+              return <div class="md:w-sm max-w-xs m-auto"><ShoppingCard title={pc.name[langCode]} click_message="compra" url="image_source" stars={pc.stars} url={pc.url} price={300.10} image_source={pc.image}></ShoppingCard></div>
+            })}
+				
+			</div>
+		</div>
+	</section>
+	</div>
+  
+ </Base>

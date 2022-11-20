@@ -1,0 +1,72 @@
+---
+import Default from './Default.astro';
+
+export interface Props {
+	title: string;
+    url: URL;
+}
+const { title, url} = Astro.props;
+---
+
+<Default title={title}>
+    <div
+        class="container-fluid p-0"
+        style="margin-left: 0px; margin-right: 0px"
+    >
+        <section
+            class="resume-section p-3 p-lg-5 d-flex d-column"
+            id="about"
+            style="width: 100%; max-width: 100%; text-align: center"
+        >
+            <div class="my-auto" style="width: 100%">
+                <h1
+                    class="mb-0"
+                    style="text-align: center; font-size: calc(3rem + 3vw)"
+                >
+                    Poli<span class="text-primary">Network</span>
+                </h1>
+                <div class="subheading mb-5" style="text-align: center">
+                    MAIL:
+                    <a href="mailto:info@polinetwork.org">info@polinetwork.org</a>
+                </div>
+                <div class="social-icons" style="text-align: center">
+                    <a
+                        href="./it/index.html"
+                        style="width: 100px; height: 100px; vertical-align: middle"
+                    >
+                        <i
+                            class="fab"
+                            style="height: 100px; line-height: 90px; font-size: 2.5rem"
+                            >IT</i
+                        > </a
+                    >---
+                    <a
+                        href="./en/index.html"
+                        style="width: 100px; height: 100px; vertical-align: middle"
+                    >
+                        <i
+                            class="fab"
+                            style="height: 100px; line-height: 90px; font-size: 2.5rem"
+                            >EN</i
+                        >
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <slot />
+
+</Default>
+
+<script type="text/javascript" define:vars={{ url }}>
+    const urlObj = new URL(url)
+    console.log(urlObj)
+    var userLang = navigator.language || navigator.userLanguage;
+    if (userLang.includes("it")) {
+        urlObj.pathname = "/it" + urlObj.pathname
+    } else {
+        urlObj.pathname = "/en" + urlObj.pathname
+    }
+    window.location.replace(urlObj.pathname);
+</script>

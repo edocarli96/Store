@@ -1,7 +1,8 @@
 ---
-import Base from '~/layouts/Base.astro';
-import { Languages } from '~/utils/types';
+import Redirect from "~/layouts/Redirect.astro";
+
 ---
-<Base title="Home" language={Languages.IT}>
-	<div class="text-amber-600">hello</div>
-</Base>
+
+<Redirect title="Welcome to Astro." url={Astro.url}>
+
+</Redirect>

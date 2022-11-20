@@ -21,14 +21,18 @@ export interface SchoolCourse {
 }
 
 export interface CourseToPC{
-  course: string
+  course: string[],
+  desc: string[]
   pcs: PC[]
 }
 
 export interface PC {
-  name: string,
-  specs: string[],
-  price: number
+  name: string[],
+  specs: string[][],
+  price: number,
+  url: string,
+  image: string,
+  stars: number
 }
 
 export namespace Languages {
