@@ -21,6 +21,7 @@ export interface SchoolCourse {
 }
 
 export interface CourseToPC{
+  slug: string
   course: string[],
   desc: string[]
   pcs: PC[]

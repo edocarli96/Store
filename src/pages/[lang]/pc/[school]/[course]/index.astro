@@ -14,11 +14,11 @@ export async function getStaticPaths() {
     for (let e = 0; e < _school.courses.length; e++) {
       const _course = _school.courses[e];
       for (let y = 0; y < Languages.values().length; y++) {
-        const langCode = Languages.toNum(Languages.values()[y]);
+        const langCode = Languages.toNum(Languages.values()[y] as Languages);
         toReturn.push({
           params: {
             school: _school.school,
-            course: _course.course[langCode],
+            course: _course.slug,
             lang: Languages.values()[y]
           },
           props: {
@@ -37,13 +37,13 @@ const { language, school, course } = Astro.props;
 
 const langCode = Languages.toNum(language);
 
-const main_title = ["abc", "abcE"]
-const main_text = ["text", "textE"]
 
 let schoolsToPCs: SchoolToPCs = await getPCmap()
 let this_school = schoolsToPCs.schools.find(schools => schools.school == school)
 let this_course = this_school.courses.find(_course => _course.course[langCode] == course)
 
+const main_title = ["abc", "abcE"]
+const main_text = ["text", "textE"]
 
 const pcs = this_course.pcs
 ---

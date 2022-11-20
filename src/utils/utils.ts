@@ -55,6 +55,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 				school: 'ieee',
 				courses: [
 					{
+						slug: 'info',
 						course: ['info', 'infoE'],
 						desc: ['boh', 'boheng'],
 						pcs: [
@@ -94,6 +95,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
+						slug: 'info1',
 						course: ['info1', 'info1E'],
 						desc: ['boh', 'boheng'],
 						pcs: [
@@ -111,6 +113,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
+						slug: 'info2',
 						course: ['info2', 'info2E'],
 						desc: ['boh', 'boheng'],
 						pcs: [
@@ -128,6 +131,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
+						slug: 'info3',
 						course: ['info3', 'info3E'],
 						desc: ['boh', 'boheng'],
 						pcs: [
@@ -145,6 +149,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
+						slug: 'info4',
 						course: ['info4', 'info4E'],
 						desc: ['boh', 'boheng'],
 						pcs: [
@@ -167,6 +172,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 				school: 'design',
 				courses: [
 					{
+						slug: 'infoc',
 						course: ['info', 'infoE'],
 						desc: ['boh', 'boheng'],
 						pcs: [
@@ -184,6 +190,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
+						slug: 'infoc',
 						course: ['info1', 'info1E'],
 						desc: ['boh', 'boheng'],
 						pcs: [
@@ -201,6 +208,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
+						slug: 'infod',
 						course: ['info2', 'info2E'],
 						desc: ['boh', 'boheng'],
 						pcs: [
@@ -218,6 +226,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
+						slug: 'infoq',
 						course: ['info3', 'info3E'],
 						desc: ['boh', 'boheng'],
 						pcs: [
@@ -235,6 +244,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
+						slug: 'infoh',
 						course: ['info4', 'info4E'],
 						desc: ['boh', 'boheng'],
 						pcs: [
@@ -257,6 +267,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 				school: 'auic',
 				courses: [
 					{
+						slug: 'infoa',
 						course: ['info', 'infoE'],
 						desc: ['boh', 'boheng'],
 						pcs: [
@@ -274,6 +285,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
+						slug: 'infob',
 						course: ['info1', 'info1E'],
 						desc: ['boh', 'boheng'],
 						pcs: [
@@ -291,6 +303,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
+						slug: 'infoc',
 						course: ['info2', 'info2E'],
 						desc: ['boh', 'boheng'],
 						pcs: [
@@ -308,6 +321,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
+						slug: 'infod',
 						course: ['info3', 'info3E'],
 						desc: ['boh', 'boheng'],
 						pcs: [
@@ -325,6 +339,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
+						slug: 'infoe',
 						course: ['info4', 'info4E'],
 						desc: ['boh', 'boheng'],
 						pcs: [
@@ -347,6 +362,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 				school: 'icat',
 				courses: [
 					{
+						slug: 'info23',
 						course: ['info', 'infoE'],
 						desc: ['boh', 'boheng'],
 						pcs: [
@@ -364,6 +380,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
+						slug: 'infoht',
 						course: ['info1', 'info1E'],
 						desc: ['boh', 'boheng'],
 						pcs: [
@@ -381,6 +398,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
+						slug: 'infohy',
 						course: ['info2', 'info2E'],
 						desc: ['boh', 'boheng'],
 						pcs: [
@@ -398,6 +416,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
+						slug: 'info65',
 						course: ['info3', 'info3E'],
 						desc: ['boh', 'boheng'],
 						pcs: [
@@ -415,6 +434,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
+						slug: 'infojy',
 						course: ['info4', 'info4E'],
 						desc: ['boh', 'boheng'],
 						pcs: [
