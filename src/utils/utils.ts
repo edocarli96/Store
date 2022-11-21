@@ -65,17 +65,17 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								specs: [
 									['Intel I7-11800H', 'Intel I7-11800H'],
 									['RAM 16GB DDR4 3200MHz', 'RAM 16GB DDR4 3200MHz'],
-									['Nvidia RTX 3050, 4GB GDDR6','Nvidia RTX 3050, 4GB GDDR6'],
+									['Nvidia RTX 3050, 4GB GDDR6', 'Nvidia RTX 3050, 4GB GDDR6'],
 									['512GB SSD M.2', '512GB SSD M.2'],
-									['15.6" FHD','15.6" FHD']
+									['15.6" FHD', '15.6" FHD'],
 								],
 								stars: Math.round(4),
 								url: 'https://www.amazon.it/MSI-11UC-1014IT-Notebook-I7-11800H-Garanzia/dp/B0B21QFNLK/',
 								image: 'https://m.media-amazon.com/images/I/714ZF1iOqmL._AC_SL1500_.jpg',
-								price: {value:899.00, time:'2022-11-20T21:00:00'},
-							}
+								price: { value: 899.0, time: '2022-11-20T21:00:00' },
+							},
 						],
-					}
+					},
 				],
 			},
 			{
@@ -85,22 +85,22 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						slug: 'fashion',
 						course: ['Design della moda 👗', 'Fashion design 👗'],
 						desc: ['Design della moda', 'Fashion design'],
-						extra:[],
+						extra: [],
 						pcs: [
 							{
 								name: '2021 Apple MacBook Pro',
 								specs: [
 									['14"', '14"'],
 									['512GB SSD', '512GB SSD'],
-									['16GB RAM','16GB RAM']
+									['16GB RAM', '16GB RAM'],
 								],
 								stars: 4,
 								url: 'https://www.amazon.it/Apple-MacBook-8-core-GPU-14%E2%80%91core-512GB/dp/B09JQSRWV5/',
 								image: 'https://m.media-amazon.com/images/I/61cCf94xIEL._AC_SL1500_.jpg',
-								price: {value: 2069, time:'2022-11-20T21:00:00'},
+								price: { value: 2069, time: '2022-11-20T21:00:00' },
 							},
 						],
-					}
+					},
 				],
 			},
 			{
@@ -110,31 +110,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						slug: 'todo',
 						course: ['todo', 'todoE'],
 						desc: ['todo', 'todoE'],
-						extra:[],
-						pcs: [
-							{
-								name:'todo',
-								specs: [
-									['i500', 'i500E'],
-									['182GB di RAM', 'RAME'],
-								],
-								stars: 4,
-								url: 'https://polinetwork.org',
-								image: 'https://polinetwork.org',
-								price: {value:1000, time:''},
-							},
-						],
-					}
-				],
-			},
-			{
-				school: 'icat',
-				courses: [
-					{
-						slug: 'todo',
-						course: ['todo', 'todoE'],
-						desc: ['todo', 'todoE'],
-						extra:[],
+						extra: [],
 						pcs: [
 							{
 								name: 'todo',
@@ -145,10 +121,34 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								stars: 4,
 								url: 'https://polinetwork.org',
 								image: 'https://polinetwork.org',
-								price: {value:1000, time:''},
+								price: { value: 1000, time: '' },
 							},
 						],
-					}
+					},
+				],
+			},
+			{
+				school: 'icat',
+				courses: [
+					{
+						slug: 'todo',
+						course: ['todo', 'todoE'],
+						desc: ['todo', 'todoE'],
+						extra: [],
+						pcs: [
+							{
+								name: 'todo',
+								specs: [
+									['i500', 'i500E'],
+									['182GB di RAM', 'RAME'],
+								],
+								stars: 4,
+								url: 'https://polinetwork.org',
+								image: 'https://polinetwork.org',
+								price: { value: 1000, time: '' },
+							},
+						],
+					},
 				],
 			},
 		],
