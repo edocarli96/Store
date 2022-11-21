@@ -28,10 +28,15 @@ export interface CourseToPC{
   extra: string[]
 }
 
+export interface PricePC{
+  value: number,
+  time: string
+}
+
 export interface PC {
   name: string,
   specs: string[][],
-  price: number,
+  price: PricePC,
   url: string,
   image: string,
   stars: number
