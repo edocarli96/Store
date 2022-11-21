@@ -85,7 +85,7 @@ const priceTime = printDate(price.time);
 				{
 					specs != null &&
 						specs.map((pc) => {
-							return <div class=" max-w-xs m-auto">{language == Languages.IT ? pc[0] : pc[1]}</div>;
+							return <div class=" max-w-xs m-auto">{language == Languages.IT ? pc[0] : (pc[1] ? pc[1] : pc[0])}</div>;
 						})
 				}
 				{specs != null && <div style="padding-top:20px;" />}
