@@ -110,7 +110,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 							{
 								name: 'MacBook Pro 13" 2022, M2, 8GB RAM, 512GB SSD',
 								specs: [
-									['Buon entrylevel con performance adeguate a carichi di lavoro medi', 'Ciao'],
+									['Buon entrylevel con performance adeguate a carichi di lavoro medi', ''],
 									['Display Retina con ottima restituzione cromatica.', ''],
 									[
 										'Gli 8GB di RAM sono particolarmente veloci e sufficienti alla maggior parte delle necessità, ma possono risultare stretti in caso di rendering foto/video intenso.',
@@ -122,7 +122,22 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								stars: 3,
 								url: 'https://amzn.to/3Xj7FLJ',
 								image: 'https://m.media-amazon.com/images/I/61NRYreJ2cL._AC_SL1500_.jpg',
-								price: { value: 1687, time: '2022-11-21T14:00:00' },
+								price: { value: 1687.64, time: '2022-11-21T14:00:00' },
+							},
+							{
+								name: 'MacBook Pro 14" 2021, M1 Pro, CPU 8-core, GPU 14-core, 16GB RAM, 512GB SSD',
+								specs: [
+									[
+										'Midrange con performance adeguate a carichi di lavoro medio-alti, inclusi rendering foto/video e 3D moderati.',
+										'',
+									],
+									['Display XDR OLED (P3-1600 nit) con la migliore restituzione cromatica su computer laptop.', ''],
+									['Ottima autonomia e portabilità', ''],
+								],
+								stars: 3,
+								url: 'https://amzn.to/3VhxSIy',
+								image: 'https://m.media-amazon.com/images/I/61vFO3R5UNL._AC_SL1500_.jpg',
+								price: { value: 2069.00, time: '2022-11-21T14:00:00' },
 							},
 						],
 					},
