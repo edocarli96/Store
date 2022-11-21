@@ -6,13 +6,15 @@ export interface Props {
 }
 
 const { language } = Astro.props as Props;
+
+const url = Astro.url;
 ---
 
 <footer class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900">
 	<hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
 	<div style="padding-top:10px;"></div>
 	<div class="sm:flex sm:items-center sm:justify-between">
-		<a href="/" class="flex items-center mb-4 sm:mb-0">
+		<a href={url.pathname.toString().length > 4 ? '/' : '#'} class="flex items-center mb-4 sm:mb-0">
 			<img
 				src="https://raw.githubusercontent.com/PoliNetworkOrg/Logo/master/Logo.png"
 				class="mr-3 h-8"
