@@ -9,13 +9,15 @@ export interface Props {
 
 const { language } = Astro.props as Props;
 
+const url = Astro.url;
+
 let languageSwitch = Languages.languageSwitchPages(Astro.url);
 ---
 
 <!-- prettier-ignore -->
 <div class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
 	<div class="container grid grid-cols-3 items-center justify-between mx-auto">
-		<a href="/" class="flex items-center">
+		<a href={url.pathname.toString().length > 4 ? "/" : "#"} class="flex items-center">
 			<img
 				src="https://raw.githubusercontent.com/PoliNetworkOrg/Logo/master/Logo.png"
 				class="h-6 mr-3 sm:h-9"
