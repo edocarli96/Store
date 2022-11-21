@@ -11,10 +11,12 @@ export async function getStaticPaths() {
 	});
 }
 
-const Sections = [{
-  title:'Computer 💻',
-  path: "pc"
-}];
+const Sections = [
+	{
+		title: 'Computer 💻',
+		path: 'pc',
+	},
+];
 const Descriptions = [
 	['Acquista PC consigliati per il tuo corso', 'Buy recommended PCs for your class'],
 	['Acquista PC consigliati per il tuo corso', 'Buy recommended PCs for your class'],
@@ -26,14 +28,14 @@ const langCode = Languages.toNum(language);
 const buttons: {
 	title: string[];
 	text: string[];
-  path?: string;
+	path?: string;
 }[] = [];
 
 for (let e = 0; e < Sections.length; e++) {
 	buttons.push({
 		title: [Sections[e].title, Sections[e].title],
 		text: [Descriptions[e][langCode], Descriptions[e][langCode]],
-    path: Sections[e].path
+		path: Sections[e].path,
 	});
 }
 ---
@@ -47,4 +49,8 @@ for (let e = 0; e < Sections.length; e++) {
 		'A site exclusively dedicated to collecting all the products recommended by the network, to facilitate the purchase of certain materials by students, with the guarantee of the network on the quality of the products, compatibly with the chosen degree course',
 	]}
 	main_title={['I prodotti consigliati da PoliNetwork 📌', 'The products recommended by PoliNetwork 📌']}
+	bottom_text={[
+		'Il tuo corso non è presente e vuoi darci consigli in merito da condividere con tutti? Scrivi ai nostri contatti!',
+		'Your course is not present and you want to give us advice to share with everyone? Write to our contacts!',
+	]}
 />

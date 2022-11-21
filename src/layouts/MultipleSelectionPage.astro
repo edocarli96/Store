@@ -9,9 +9,10 @@ export interface Props {
 	main_text: string[];
 	main_title: string[];
 	buttons: { title: string[]; text: string[]; path?: string }[];
+	bottom_text?: string[];
 }
 
-const { language, title, buttons, main_text, main_title } = Astro.props;
+const { language, title, buttons, main_text, main_title, bottom_text } = Astro.props;
 const langCode = Languages.toNum(language);
 ---
 
@@ -37,6 +38,13 @@ const langCode = Languages.toNum(language);
 							})
 					}
 				</div>
+				{
+					bottom_text != null ? (
+						<div class="dark:text-white pt-15">{language == Languages.IT ? bottom_text[0] : bottom_text[1]}</div>
+					) : (
+						''
+					)
+				}
 			</div>
 		</section>
 	</div>
