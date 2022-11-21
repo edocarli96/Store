@@ -101,6 +101,31 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 							},
 						],
 					},
+					{
+						slug: 'communication',
+						course: ['Design della comunicazione 📣', 'Communication design 📣'],
+						desc: ['Design della comunicazione', 'Communication design'],
+						extra: [],
+						pcs: [
+							{
+								name: 'MacBook Pro 13" 2022, M2, 8GB RAM, 512GB SSD',
+								specs: [
+									['Buon entrylevel con performance adeguate a carichi di lavoro medi', 'Ciao'],
+									['Display Retina con ottima restituzione cromatica.', ''],
+									[
+										'Gli 8GB di RAM sono particolarmente veloci e sufficienti alla maggior parte delle necessità, ma possono risultare stretti in caso di rendering foto/video intenso.',
+										'',
+									],
+									['Se disponibile, valutare la configurazione con 16GB di RAM per una maggiore versatilità.', ''],
+									['Ottima autonomia e portabilità', ''],
+								],
+								stars: 4,
+								url: 'https://amzn.to/3Xj7FLJ',
+								image: '',
+								price: { value: 1687, time: '2022-11-21T14:00:00' },
+							},
+						],
+					},
 				],
 			},
 			{
