@@ -76,6 +76,28 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 							},
 						],
 					},
+					{
+						slug: 'management',
+						course: ['Gestionale 📊', 'Management 📊'],
+						desc: ['Ingegneria Gestionale', 'Management Engineering'],
+						extra: [],
+						pcs: [
+							{
+								name: 'Acer Aspire 3 A315-58-56LW',
+								specs: [
+									['Intel Core i5-1135G7', 'Intel Core i5-1135G7'],
+									['RAM 8 GB DDR4 2.4 GHz', 'RAM 8 GB DDR4 2.4 GHz'],
+									['Intel Iris Xe, 4GB GDDR6', 'Intel Iris Xe, 4GB GDDR6'],
+									['512 GB PCIe NVMe SSD', '512 GB PCIe NVMe SSD'],
+									['15.6" FHD', '15.6" FHD'],
+								],
+								stars: 3,
+								url: 'https://amzn.eu/d/c5lTsEg',
+								image: 'https://m.media-amazon.com/images/I/81R86aeUJpL._AC_SX679_.jpg',
+								price: { value: 459.0, time: '2022-11-22T19:00:01' },
+							},
+						],
+					},
 				],
 			},
 			{
