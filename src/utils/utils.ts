@@ -99,9 +99,9 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: 'aerospace',
+						slug: 'aerospace, energy, mechanical',
 						course: ['Aerospaziale, Energetica, Meccanica 🚀🛠', 'Aerospace, Energy, Mechanical 🚀🛠'],
-						desc: ['Ingegneria Aerospaziale, Energetica, Meccanica', 'Aerospace Engineering'],
+						desc: ['Ingegneria Aerospaziale, Energetica, Meccanica', 'Aerospace, Energy, Mechanical Engineering'],
 						extra: [],
 						pcs: [
 							{
