@@ -37,17 +37,21 @@ function printDate(dateString: string) {
 const priceTime = printDate(price.time);
 ---
 
-<div class="bg-neutral-700 rounded-full px-7 py-2">
-	<span class="text-2xl font-bold text-gray-900 dark:text-white"
+<div class="dark:bg-neutral-700 bg-neutral-50 rounded-full px-7 py-2">
+	<span class="text-2xl font-bold text-gray-600 dark:text-gray-200"
 		>{(Math.round(price.value * 100) / 100).toFixed(2)} €</span
 	>
 	<table class="text-sm">
 		<tr>
 			<td
-				><img width="30" src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-clock-icon.png" />
+				><img
+					width="30"
+					class="opacity-70"
+					src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-clock-icon.png"
+				/>
 			</td>
 			<td>
-				<table class="text-center">
+				<table class="text-center text-gray-600 dark:text-gray-300">
 					<tr>
 						<td>
 							<span>{priceTime[0]}</span>
