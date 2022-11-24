@@ -33,16 +33,21 @@ if (this_school == null) {
 	throw new Error('PC Map is invalid', this_school);
 }
 
+const coursesFiltered = this_school.courses.filter(
+	(x) =>
+		x != null &&
+		(this_school?.courses
+			.find((_course) => _course.course[langCode] == x.course[langCode])
+			?.pcs.filter((pc) => pc.complete).length ?? 0) > 0
+);
 
-const buttons: { title: string[]; text: string[]; path: string }[] = this_school.courses
-	.filter((x) => x != null && (this_school?.courses.find((_course) => _course.course[langCode] == x.course[langCode])?.pcs.filter((pc)=> pc.complete).length ?? 0) > 0)
-	.map((course) => {
-		return {
-			title: course.course,
-			text: course.desc,
-			path: course.slug,
-		};
-	});
+const buttons: { title: string[]; text: string[]; path: string }[] = coursesFiltered.map((course) => {
+	return {
+		title: course.course,
+		text: course.desc,
+		path: course.slug,
+	};
+});
 
 const title = ['Consiglio ' + school, 'Suggestion' + school];
 ---
