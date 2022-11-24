@@ -1,0 +1,75 @@
+---
+import PriceTag from '~/components/PriceTag.astro';
+import Base from '~/layouts/Base.astro';
+import { Languages } from '~/utils/types';
+
+export async function getStaticPaths() {
+	return Languages.values().map((language) => {
+		return {
+			params: { lang: language },
+			props: { language },
+		};
+	});
+}
+const { language } = Astro.props;
+
+---
+
+<Base language={language} title="Help">
+	<div class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400 mr-4 md:mr-6">
+		<div class="m-auto border px-3 py-3 rounded-xl">
+			<table>
+				<tr
+					><td class="px-3 max-w-xs">
+						{
+							language == Languages.IT ? (
+								<span>
+									Il sito fa uso di simboli al fine di semplificare la visione dei prodotti, qui in allegato la tabella
+									riassuntiva:
+								</span>
+							) : (
+								<span>
+									The site makes use of symbols in order to simplify the vision of the products, the table is attached
+									herewith summary:
+								</span>
+							)
+						}
+					</td>
+				</tr>
+				<tr><td>&nbsp;</td></tr>
+				<tr
+					><td>
+						<table class="table-fixed center">
+							<tr class="text-center px-3">
+								<td class="px-3 font-semibold"
+									>{language == Languages.IT ? <span>Simbolo</span> : <span>Symbol</span>}</td
+								>
+								<td class="px-3 font-semibold"
+									>{language == Languages.IT ? <span>Significato</span> : <span>Meaning</span>}</td
+								>
+							</tr>
+							<tr>
+								<td class="px-3"><PriceTag price={{ value: 99.99, time: '2022-12-31T21:59:59' }} /></td>
+								<td class="px-3 max-w-xs">
+									{
+										language == Languages.IT ? (
+											<span>
+												Si intende che il prezzo di quel prodotto, alla data indicata, è quello indicato. Il prezzo può
+												subire variazioni nel tempo.
+											</span>
+										) : (
+											<span>
+												It means that the price of that product, on the date indicated, is that indicated in bold text.
+												The price can undergo changes over time.
+											</span>
+										)
+									}
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</Base>

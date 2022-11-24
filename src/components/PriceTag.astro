@@ -27,9 +27,7 @@ function printDate(dateString: string) {
 	const formattedTime =
 		hh.toString().padStart(2, '0') +
 		':' +
-		minutes.toString().padStart(2, '0') +
-		':' +
-		seconds.toString().padStart(2, '0');
+		minutes.toString().padStart(2, '0');
 
 	return [formattedDate, formattedTime];
 }
@@ -37,33 +35,9 @@ function printDate(dateString: string) {
 const priceTime = printDate(price.time);
 ---
 
-<div class="dark:bg-sky-900/20 bg-neutral-50 rounded-full px-7 py-2 text-center">
+<div class="grid grid-rows-[2fr_1fr]">
 	<span class="text-2xl font-bold text-gray-600 dark:text-gray-200 text-center"
 		>{(Math.round(price.value * 100) / 100).toFixed(2)} €</span
 	>
-	<table class="text-sm">
-		<tr>
-			<td
-				><img
-					width="30"
-					class="opacity-70"
-					src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-clock-icon.png"
-				/>
-			</td>
-			<td>
-				<table class="text-center text-gray-600 dark:text-gray-300">
-					<tr>
-						<td>
-							<span>{priceTime[0]}</span>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							{priceTime[1] ? <span>{priceTime[1]}</span> : ''}
-						</td>
-					</tr>
-				</table>
-			</td>
-		</tr>
-	</table>
+	<span class="m-auto text-xs text-gray-500 dark:text-gray-500">{priceTime[0]} {priceTime[1] ? <span>{priceTime[1]}</span> : ''}</span>
 </div>
