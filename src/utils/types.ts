@@ -11,6 +11,11 @@ export enum Schools {
 	AUIC = 'auic',
 }
 
+export interface LanguageString {
+	it: string;
+	en: string;
+}
+
 export interface PcMap {
 	schools: SchoolToPCs[];
 }
@@ -26,8 +31,8 @@ export interface SchoolCourse {
 
 export interface CourseToPC {
 	slug: string;
-	course: string[];
-	desc: string[];
+	course: LanguageString;
+	desc: LanguageString;
 	pcs: PC[];
 	extra: string[];
 }
@@ -45,6 +50,15 @@ export interface PC {
 	image: string;
 	stars: number;
 	complete: boolean;
+}
+
+export function selectLanguage(langCode: string, languageString: LanguageString) {
+	if (langCode == Languages.IT) {
+		return languageString.it;
+	}
+
+	if (languageString.en && languageString.en.length > 0) return languageString.en;
+	return languageString.it;
 }
 
 export namespace Languages {

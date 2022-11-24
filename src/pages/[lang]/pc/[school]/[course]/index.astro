@@ -4,6 +4,8 @@ import Base from '~/layouts/Base.astro';
 import { Languages, SchoolToPCs } from '~/utils/types';
 import { getPCmap } from '~/utils/utils';
 
+import { selectLanguage } from '~/utils/types';
+
 export async function getStaticPaths() {
 	const schoolsToPCs = await getPCmap();
 	let toReturn: {
@@ -15,7 +17,6 @@ export async function getStaticPaths() {
 		for (let e = 0; e < _school.courses.length; e++) {
 			const _course = _school.courses[e];
 			for (let y = 0; y < Languages.values().length; y++) {
-				const langCode = Languages.toNum(Languages.values()[y] as Languages);
 				toReturn.push({
 					params: {
 						school: _school.school,
@@ -24,7 +25,7 @@ export async function getStaticPaths() {
 					},
 					props: {
 						school: _school.school,
-						course: _course.course[langCode],
+						course: selectLanguage(language, _course.course),
 						language: Languages.values()[y],
 					},
 				});
@@ -36,14 +37,12 @@ export async function getStaticPaths() {
 
 const { language, school, course } = Astro.props;
 
-const langCode = Languages.toNum(language);
-
 let schoolsToPCs: SchoolToPCs = await getPCmap();
 let this_school = schoolsToPCs.schools.find((schools) => schools.school == school);
 if (this_school == null) {
 	throw new Error('PC Map is invalid', this_school);
 }
-let this_course = this_school.courses.find((_course) => _course.course[langCode] == course);
+let this_course = this_school.courses.find((_course) => selectLanguage(language, _course.course) == course);
 if (this_course == null) {
 	throw new Error('PC Map is invalid', this_course);
 }
@@ -54,15 +53,15 @@ const pcs = this_course.pcs;
 const extra = this_course.extra;
 ---
 
-<Base title={main_title[0]} language={language}>
+<Base title={selectLanguage(language, main_title)} language={language}>
 	<div class="justify-items-center">
 		<section class="bg-white dark:bg-gray-900">
 			<div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
 				<div class="max-w-screen-md">
 					<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-						{main_title[langCode]}
+						{selectLanguage(language, main_title)}
 					</h2>
-					<p class="text-gray-500 sm:text-xl dark:text-gray-400">{main_text[langCode]}</p>
+					<p class="text-gray-500 sm:text-xl dark:text-gray-400">{selectLanguage(language, main_text)}</p>
 				</div>
 				<div class="text-gray-500 sm:text-md dark:text-gray-400 pt-4">
 					{language == Languages.IT ? extra[0] : extra[1]}

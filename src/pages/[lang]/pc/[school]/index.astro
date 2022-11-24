@@ -1,7 +1,8 @@
 ---
 import MultipleSelectionPage from '~/layouts/MultipleSelectionPage.astro';
-import { Languages, Schools, SchoolToPCs } from '~/utils/types';
+import { Languages, LanguageString, Schools, SchoolToPCs } from '~/utils/types';
 import { getPCmap } from '~/utils/utils';
+import { selectLanguage } from '~/utils/types';
 
 export async function getStaticPaths() {
 	let toReturn: { params: { school: string; lang: string }; props: { school: string; language: string } }[] = [];
@@ -25,7 +26,6 @@ export async function getStaticPaths() {
 }
 
 const { language, school } = Astro.props;
-const langCode = Languages.toNum(language);
 
 let schoolsToPCs: SchoolToPCs = await getPCmap();
 let this_school = schoolsToPCs.schools.find((schools) => schools.school == school);
@@ -37,11 +37,11 @@ const coursesFiltered = this_school.courses.filter(
 	(x) =>
 		x != null &&
 		(this_school?.courses
-			.find((_course) => _course.course[langCode] == x.course[langCode])
+			.find((_course) => selectLanguage(language, _course.course) == selectLanguage(language, x.course))
 			?.pcs.filter((pc) => pc.complete).length ?? 0) > 0
 );
 
-const buttons: { title: string[]; text: string[]; path: string }[] = coursesFiltered.map((course) => {
+const buttons: { title: LanguageString; text: LanguageString; path: string }[] = coursesFiltered.map((course) => {
 	return {
 		title: course.course,
 		text: course.desc,

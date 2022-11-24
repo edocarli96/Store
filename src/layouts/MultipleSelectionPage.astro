@@ -1,6 +1,6 @@
 ---
 import Card from '~/components/Card.astro';
-import { Languages } from '~/utils/types';
+import { Languages, LanguageString } from '~/utils/types';
 import Base from './Base.astro';
 
 export interface Props {
@@ -8,12 +8,13 @@ export interface Props {
 	title: string[];
 	main_text: string[];
 	main_title: string[];
-	buttons: { title: string[]; text: string[]; path?: string }[];
+	buttons: { title: LanguageString; text: LanguageString; path?: string }[];
 	bottom_text?: string[];
 }
 
 const { language, title, buttons, main_text, main_title, bottom_text } = Astro.props;
 const langCode = Languages.toNum(language);
+import { selectLanguage } from '~/utils/types';
 ---
 
 <Base title={title[langCode]} language={language}>
@@ -32,7 +33,11 @@ const langCode = Languages.toNum(language);
 							buttons.map((button) => {
 								return (
 									<div class="md:w-sm max-w-xs m-auto">
-										<Card path={button.path} text={button.text[langCode]} title={button.title[langCode]} />
+										<Card
+											path={button.path}
+											text={selectLanguage(language, button.text)}
+											title={selectLanguage(language, button.title)}
+										/>
 									</div>
 								);
 							})

@@ -14,30 +14,33 @@ export async function getStaticPaths() {
 
 const schools = [
 	{
-		title: ['IEEE 🔧', 'IEEE 🔧'],
+		title: { it: 'IEEE 🔧', en: 'IEEE 🔧' },
 		path: 'ieee',
-		text: ["Scuola di Ingegneria Industriale dell'Informazione", 'School of Industrial Information Engineering'],
+		text: {
+			it: "Scuola di Ingegneria Industriale dell'Informazione",
+			en: 'School of Industrial Information Engineering',
+		},
 	},
 	{
-		title: ['Design ✏️', 'Design ✏️'],
+		title: { it: 'Design ✏️', en: 'Design ✏️' },
 		path: 'design',
-		text: ['Scuola di Design', 'School of Design'],
+		text: { it: 'Scuola di Design', en: 'School of Design' },
 	},
 	{
-		title: ['Icat 🚧', 'Icat 🚧'],
+		title: { it: 'Icat 🚧', en: 'Icat 🚧' },
 		path: 'icat',
-		text: [
-			'Scuola di Ingegneria Civile, Ambientale e Territoriale',
-			'School of Civil, Environmental and Territorial Engineering',
-		],
+		text: {
+			it: 'Scuola di Ingegneria Civile, Ambientale e Territoriale',
+			en: 'School of Civil, Environmental and Territorial Engineering',
+		},
 	},
 	{
-		title: ['Auic 📐', 'Auic 📐'],
+		title: { it: 'Auic 📐', en: 'Auic 📐' },
 		path: 'auic',
-		text: [
-			'Scuola di Architettura Urbanistica e Ingegneria delle Costruzioni',
-			'School of Architecture Urban Planning and Construction Engineering',
-		],
+		text: {
+			it: 'Scuola di Architettura Urbanistica e Ingegneria delle Costruzioni',
+			en: 'School of Architecture Urban Planning and Construction Engineering',
+		},
 	},
 ];
 
