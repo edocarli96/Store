@@ -70,9 +70,9 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 									['15.6" FHD', '15.6" FHD'],
 								],
 								stars: 4,
-								url: 'https://www.amazon.it/MSI-11UC-1014IT-Notebook-I7-11800H-Garanzia/dp/B0B21QFNLK/',
-								image: 'https://m.media-amazon.com/images/I/714ZF1iOqmL._AC_SL1500_.jpg',
-								price: { value: 899.0, time: '2022-11-20T21:00:01' },
+								url: 'https://www.amazon.it/MSI-11UC-1224IT-Notebook-I7-11800H-Garanzia/dp/B09PLNW8KP',
+								image: 'https://m.media-amazon.com/images/I/71yxQ9XaIwL._AC_SL1500_.jpg',
+								price: { value: 999.0, time: '2022-11-24T17:00:00' },
 								complete:true
 							},
 						],
