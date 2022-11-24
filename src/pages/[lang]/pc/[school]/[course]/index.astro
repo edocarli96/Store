@@ -5,6 +5,7 @@ import { Languages, SchoolToPCs } from '~/utils/types';
 import { getPCmap } from '~/utils/utils';
 
 import { selectLanguage } from '~/utils/types';
+const { language, school, course } = Astro.props;
 
 export async function getStaticPaths() {
 	const schoolsToPCs = await getPCmap();
@@ -14,6 +15,7 @@ export async function getStaticPaths() {
 	}[] = [];
 	for (let index = 0; index < schoolsToPCs.schools.length; index++) {
 		const _school = schoolsToPCs.schools[index];
+
 		for (let e = 0; e < _school.courses.length; e++) {
 			const _course = _school.courses[e];
 			for (let y = 0; y < Languages.values().length; y++) {
@@ -25,7 +27,7 @@ export async function getStaticPaths() {
 					},
 					props: {
 						school: _school.school,
-						course: selectLanguage(language, _course.course),
+						course: selectLanguage(Languages.values()[y], _course.course),
 						language: Languages.values()[y],
 					},
 				});
@@ -34,8 +36,6 @@ export async function getStaticPaths() {
 	}
 	return toReturn;
 }
-
-const { language, school, course } = Astro.props;
 
 let schoolsToPCs: SchoolToPCs = await getPCmap();
 let this_school = schoolsToPCs.schools.find((schools) => schools.school == school);
