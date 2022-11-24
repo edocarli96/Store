@@ -74,6 +74,16 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								price: { value: 999.0, time: '2022-11-24T17:00:00' },
 								complete: true,
 							},
+							{
+								name: 'HP15.6 FHD',
+								specs: [
+								],
+								stars: 4.5,
+								url: 'https://www.amazon.it/HP-15s-eq2009sl-Notebook-Portatile-Antiriflesso/dp/B09L5522BL',
+								image: 'https://m.media-amazon.com/images/I/816p4kldSRL._AC_SL1500_.jpg',
+								price: { value: 499.0, time: '2022-11-24T23:00:00' },
+								complete: true,
+							},
 						],
 					},
 					{
