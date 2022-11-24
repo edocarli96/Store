@@ -1,6 +1,7 @@
 ---
 import MultipleSelectionPage from '~/layouts/MultipleSelectionPage.astro';
-import { Languages } from '~/utils/types';
+import { Languages, SchoolToPCs } from '~/utils/types';
+import { getPCmap } from '~/utils/utils';
 
 export async function getStaticPaths() {
 	return Languages.values().map((language) => {
@@ -15,7 +16,7 @@ const schools = [
 	{
 		title: ['IEEE 🔧', 'IEEE 🔧'],
 		path: 'ieee',
-		text: ['Scuola di Ingegneria Industriale dell\'Informazione', 'School of Industrial Information Engineering'],
+		text: ["Scuola di Ingegneria Industriale dell'Informazione", 'School of Industrial Information Engineering'],
 	},
 	{
 		title: ['Design ✏️', 'Design ✏️'],
@@ -25,21 +26,35 @@ const schools = [
 	{
 		title: ['Icat 🚧', 'Icat 🚧'],
 		path: 'icat',
-		text: ['Scuola di Ingegneria Civile, Ambientale e Territoriale', 'School of Civil, Environmental and Territorial Engineering'],
+		text: [
+			'Scuola di Ingegneria Civile, Ambientale e Territoriale',
+			'School of Civil, Environmental and Territorial Engineering',
+		],
 	},
 	{
 		title: ['Auic 📐', 'Auic 📐'],
 		path: 'auic',
-		text: ['Scuola di Architettura Urbanistica e Ingegneria delle Costruzioni', 'School of Architecture Urban Planning and Construction Engineering'],
+		text: [
+			'Scuola di Architettura Urbanistica e Ingegneria delle Costruzioni',
+			'School of Architecture Urban Planning and Construction Engineering',
+		],
 	},
 ];
 
 const { language } = Astro.props;
+
+let schoolsToPCs: SchoolToPCs = await getPCmap();
+const schoolsValid = schools.filter(
+	(x) =>
+		(schoolsToPCs.schools
+			.find((schools) => schools.school == x.path)
+			?.courses.filter((_course) => _course.pcs.filter((pc) => pc.complete).length > 0).length ?? 0) > 0
+);
 ---
 
 <MultipleSelectionPage
 	language={language}
-	buttons={schools}
+	buttons={schoolsValid}
 	title={['Computer 💻', 'Computer 💻']}
 	main_text={[
 		'Cerchi un computer adatto al tuo corso di laurea? Sei nel posto giusto!',
