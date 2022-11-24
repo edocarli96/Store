@@ -73,6 +73,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								url: 'https://www.amazon.it/MSI-11UC-1014IT-Notebook-I7-11800H-Garanzia/dp/B0B21QFNLK/',
 								image: 'https://m.media-amazon.com/images/I/714ZF1iOqmL._AC_SL1500_.jpg',
 								price: { value: 899.0, time: '2022-11-20T21:00:01' },
+								complete:true
 							},
 						],
 					},
@@ -95,6 +96,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								url: 'https://amzn.eu/d/c5lTsEg',
 								image: 'https://m.media-amazon.com/images/I/81R86aeUJpL._AC_SX679_.jpg',
 								price: { value: 459.0, time: '2022-11-22T19:00:01' },
+								complete: true
 							},
 						],
 					},
@@ -117,6 +119,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								url: 'link',
 								image: 'foto',
 								price: { value: 0.0, time: '2022-11-22T19:00:01' },
+								complete: false
 							},
 						],
 					},
@@ -139,6 +142,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								url: 'link',
 								image: 'foto',
 								price: { value: 0.0, time: '2022-11-22T19:00:01' },
+								complete: false
 							},
 						],
 					},
@@ -161,6 +165,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								url: 'link',
 								image: 'foto',
 								price: { value: 0.0, time: '2022-11-22T19:00:01' },
+								complete: false
 							},
 						],
 					},
@@ -183,6 +188,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								url: 'link',
 								image: 'foto',
 								price: { value: 0.0, time: '2022-11-22T19:00:01' },
+								complete: false
 							},
 						],
 					},
@@ -205,6 +211,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								url: 'link',
 								image: 'foto',
 								price: { value: 0.0, time: '2022-11-22T19:00:01' },
+								complete: false
 							},
 						],
 					},
@@ -227,6 +234,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								url: 'link',
 								image: 'foto',
 								price: { value: 0.0, time: '2022-11-22T19:00:01' },
+								complete: false
 							},
 						],
 					},
@@ -249,6 +257,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								url: 'link',
 								image: 'foto',
 								price: { value: 0.0, time: '2022-11-22T19:00:01' },
+								complete: false
 							},
 						],
 					},
@@ -271,6 +280,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								url: 'link',
 								image: 'foto',
 								price: { value: 0.0, time: '2022-11-22T19:00:01' },
+								complete: false
 							},
 						],
 					},
@@ -293,6 +303,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								url: 'link',
 								image: 'foto',
 								price: { value: 0.0, time: '2022-11-22T19:00:01' },
+								complete: false
 							},
 						],
 					},
@@ -315,6 +326,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								url: 'link',
 								image: 'foto',
 								price: { value: 0.0, time: '2022-11-22T19:00:01' },
+								complete: false
 							},
 						],
 					},
@@ -340,6 +352,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								url: 'https://www.amazon.it/Apple-MacBook-8-core-GPU-14%E2%80%91core-512GB/dp/B09JQSRWV5/',
 								image: 'https://m.media-amazon.com/images/I/61cCf94xIEL._AC_SL1500_.jpg',
 								price: { value: 2069, time: '2022-11-20T21:00:00' },
+								complete: true
 							},
 						],
 					},
@@ -365,6 +378,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								url: 'https://amzn.to/3Xj7FLJ',
 								image: 'https://m.media-amazon.com/images/I/61NRYreJ2cL._AC_SL1500_.jpg',
 								price: { value: 1687.64, time: '2022-11-21T14:00:00' },
+								complete: true
 							},
 							{
 								name: 'MacBook Pro 14" 2021, M1 Pro, CPU 8-core, GPU 14-core, 16GB RAM, 512GB SSD',
@@ -380,6 +394,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								url: 'https://amzn.to/3VhxSIy',
 								image: 'https://m.media-amazon.com/images/I/61vFO3R5UNL._AC_SL1500_.jpg',
 								price: { value: 2069.0, time: '2022-11-21T14:00:00' },
+								complete: true
 							},
 							{
 								name: 'MacBook Pro 16" 2021, M1 Pro, CPU 10-core, GPU 16-core, 16GB RAM, 512GB SSD',
@@ -395,6 +410,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								url: 'https://amzn.to/3OqKACA',
 								image: 'https://m.media-amazon.com/images/I/61aUBxqc5PL._AC_SL1500_.jpg',
 								price: { value: 2539.99, time: '2022-11-21T14:00:00' },
+								complete: true
 							},
 							{
 								name: 'MacBook Pro 16" 2021, M1 Max, CPU 10-core, GPU 32-core, 32GB RAM, 1TB SSD',
@@ -410,6 +426,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								url: 'https://amzn.to/3TTUCNU',
 								image: 'https://m.media-amazon.com/images/I/61aUBxqc5PL._AC_SL1500_.jpg',
 								price: { value: 3699.28, time: '2022-11-21T14:00:00' },
+								complete: true
 							},
 						],
 					},
@@ -434,6 +451,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								url: 'https://polinetwork.org',
 								image: 'https://polinetwork.org',
 								price: { value: 1000, time: '' },
+								complete: false
 							},
 						],
 					},
@@ -458,6 +476,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 								url: 'https://polinetwork.org',
 								image: 'https://polinetwork.org',
 								price: { value: 1000, time: '' },
+								complete: false
 							},
 						],
 					},

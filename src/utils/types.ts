@@ -44,6 +44,7 @@ export interface PC {
 	url: string;
 	image: string;
 	stars: number;
+	complete: boolean;
 }
 
 export namespace Languages {
