@@ -1,5 +1,6 @@
 ---
 import { Languages, PricePC } from '~/utils/types';
+import PriceTag from './PriceTag.astro';
 
 export interface Props {
 	title: string;
@@ -13,35 +14,6 @@ export interface Props {
 }
 
 const { title, price, stars, url, click_message, image_source, specs, language } = Astro.props;
-
-function printDate(dateString: string) {
-	if (!dateString) return '';
-	var x = dateString + 'Z';
-
-	const dateDate = new Date(Date.parse(x));
-	const yyyy = dateDate.getFullYear();
-	let mm = (dateDate.getMonth() + 1).toString().padStart(2, '0'); // Months start at 0!
-	let dd = dateDate.getDate().toString().padStart(2, '0');
-
-	const formattedDate = dd + '/' + mm + '/' + yyyy;
-
-	let hh = dateDate.getHours();
-	let minutes = dateDate.getMinutes();
-	let seconds = dateDate.getSeconds();
-
-	if (hh == 0 && minutes == 0 && seconds == 0) return [formattedDate];
-
-	const formattedTime =
-		hh.toString().padStart(2, '0') +
-		':' +
-		minutes.toString().padStart(2, '0') +
-		':' +
-		seconds.toString().padStart(2, '0');
-
-	return [formattedDate, formattedTime];
-}
-
-const priceTime = printDate(price.time);
 ---
 
 <div
@@ -85,7 +57,7 @@ const priceTime = printDate(price.time);
 				{
 					specs != null &&
 						specs.map((pc) => {
-							return <div class=" max-w-xs m-auto">{language == Languages.IT ? pc[0] : (pc[1] ? pc[1] : pc[0])}</div>;
+							return <div class=" max-w-xs m-auto">{language == Languages.IT ? pc[0] : pc[1] ? pc[1] : pc[0]}</div>;
 						})
 				}
 				{specs != null && <div style="padding-top:20px;" />}
@@ -94,37 +66,7 @@ const priceTime = printDate(price.time);
 			<div class="flex items-center justify-between">
 				<table>
 					<tr>
-						<td>
-							<div class="bg-neutral-700 rounded-full px-7 py-2">
-								<span class="text-2xl font-bold text-gray-900 dark:text-white"
-									>{(Math.round(price.value * 100) / 100).toFixed(2)} €</span
-								>
-								<table class="text-sm">
-									<tr>
-										<td
-											><img
-												width="30"
-												src="https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-clock-icon.png"
-											/>
-										</td>
-										<td>
-											<table class="text-center">
-												<tr>
-													<td>
-														<span>{priceTime[0]}</span>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														{priceTime[1] ? <span>{priceTime[1]}</span> : ''}
-													</td>
-												</tr>
-											</table>
-										</td>
-									</tr>
-								</table>
-							</div>
-						</td>
+						<td><PriceTag price={price} /></td>
 						<td>
 							<div class="px-1"></div>
 						</td>
