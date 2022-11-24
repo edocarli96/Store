@@ -10,7 +10,7 @@ const { language, school, course } = Astro.props;
 export async function getStaticPaths() {
 	const schoolsToPCs = await getPCmap();
 	let toReturn: {
-		params: { school: string; lang: string; course: string };
+		params: { school: string; lang: string; course: string[] };
 		props: { school: string; language: string; course: string };
 	}[] = [];
 	for (let index = 0; index < schoolsToPCs.schools.length; index++) {

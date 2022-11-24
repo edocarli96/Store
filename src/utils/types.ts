@@ -30,7 +30,7 @@ export interface SchoolCourse {
 }
 
 export interface CourseToPC {
-	slug: string;
+	slug: string[];
 	course: LanguageString;
 	desc: LanguageString;
 	pcs: PC[];

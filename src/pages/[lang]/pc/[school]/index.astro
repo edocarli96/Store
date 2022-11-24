@@ -41,13 +41,17 @@ const coursesFiltered = this_school.courses.filter(
 			?.pcs.filter((pc) => pc.complete).length ?? 0) > 0
 );
 
-const buttons: { title: LanguageString; text: LanguageString; path: string }[] = coursesFiltered.map((course) => {
-	return {
-		title: course.course,
-		text: course.desc,
-		path: course.slug,
-	};
-});
+const buttons: { title: LanguageString; text: LanguageString; path: string }[] = coursesFiltered
+	.map((course) => {
+		return course.slug.map((slugCurrent) => {
+			return {
+				title: course.course,
+				text: course.desc,
+				path: slugCurrent,
+			};
+		});
+	})
+	.flatMap((x) => x);
 
 const title = ['Consiglio ' + school, 'Suggestion' + school];
 ---

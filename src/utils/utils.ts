@@ -55,7 +55,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 				school: 'ieee',
 				courses: [
 					{
-						slug: 'info',
+						slug: ['info'],
 						course: { it: 'Informatica 🖥', en: 'Computer Science 🖥' },
 						desc: { it: 'Ingegneria Informatica', en: 'Computer Science Engineering' },
 						extra: ['Ad informatica il software più pesante, prestazionalmente, è Vivado'],
@@ -78,7 +78,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: 'management',
+						slug: ['management'],
 						course: { it: 'Gestionale 📊', en: 'Management 📊' },
 						desc: { it: 'Ingegneria Gestionale', en: 'Management Engineering' },
 						extra: [],
@@ -101,7 +101,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: 'aerospace, energy, mechanical',
+						slug: ['aerospace', 'energy', 'mechanical'],
 						course: { it: 'Aerospaziale, Energetica, Meccanica 🚀🛠', en: 'Aerospace, Energy, Mechanical 🚀🛠' },
 						desc: {
 							it: 'Ingegneria Aerospaziale, Energetica, Meccanica',
@@ -127,7 +127,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: 'biomedical',
+						slug: ['biomedical'],
 						course: { it: 'Biomedica 🧬', en: 'Biomedical 🧬' },
 						desc: { it: 'Ingegneria Biomedica', en: 'Biomedical Engineering' },
 						extra: [],
@@ -150,7 +150,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: 'electrical',
+						slug: ['electrical'],
 						course: { it: 'Elettrica 💡', en: 'ELectrical 💡' },
 						desc: { it: 'Ingegneria Elettrica', en: 'Electrical Engineering' },
 						extra: [],
@@ -173,7 +173,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: 'electronics',
+						slug: ['electronics'],
 						course: { it: 'Elettronica 🔌', en: 'ELectronics 🔌' },
 						desc: { it: 'Ingegneria Elettronica', en: 'Electronics Engineering' },
 						extra: [],
@@ -196,7 +196,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: 'physics',
+						slug: ['physics'],
 						course: { it: 'Fisica 🧲', en: 'Physics 🧲' },
 						desc: { it: 'Ingegneria Fisica', en: 'Physics Engineering' },
 						extra: [],
@@ -219,7 +219,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: 'mathematical',
+						slug: ['mathematical'],
 						course: { it: 'Matematica 🧮', en: 'Mathematical 🧮' },
 						desc: { it: 'Ingegneria Matematica', en: 'Mathematical Engineering' },
 						extra: [],
@@ -242,7 +242,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: 'chemical',
+						slug: ['chemical'],
 						course: { it: 'Chimica ⚗️', en: 'Chemical ⚗️' },
 						desc: { it: 'Ingegneria Chimica', en: 'Chemical Engineering' },
 						extra: [],
@@ -265,7 +265,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: 'mat&nano',
+						slug: ['mat&nano'],
 						course: { it: 'Mat&Nano 🔬', en: 'Mat&Nano 🔬' },
 						desc: {
 							it: 'Ingegneria dei Materiali e delle Nanotecnologie',
@@ -291,7 +291,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: 'automation',
+						slug: ['automation'],
 						course: { it: 'Automazione  🤖', en: 'Automation  🤖' },
 						desc: { it: 'Ingegneria dell" automazione', en: 'Automation Engineering' },
 						extra: [],
@@ -314,7 +314,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: 'industrial production',
+						slug: ['industrial production'],
 						course: { it: 'Produzione Industriale 🏭', en: 'Industrial Production  🏭' },
 						desc: { it: 'Ingegneria della produzione industriale', en: 'Industrial Production Engineering' },
 						extra: [],
@@ -342,7 +342,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 				school: 'design',
 				courses: [
 					{
-						slug: 'fashion',
+						slug: ['fashion'],
 						course: { it: 'Design della moda 👗', en: 'Fashion design 👗' },
 						desc: { it: 'Design della moda', en: 'Fashion design' },
 						extra: [],
@@ -363,7 +363,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: 'communication',
+						slug: ['communication'],
 						course: { it: 'Design della comunicazione 📣', en: 'Communication design 📣' },
 						desc: { it: 'Design della comunicazione', en: 'Communication design' },
 						extra: [],
@@ -442,7 +442,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 				school: 'auic',
 				courses: [
 					{
-						slug: 'todo',
+						slug: ['todo'],
 						course: { it: 'todo', en: 'todoE' },
 						desc: { it: 'todo', en: 'todoE' },
 						extra: [],
@@ -467,7 +467,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 				school: 'icat',
 				courses: [
 					{
-						slug: 'todo',
+						slug: ['todo'],
 						course: { it: 'todo', en: 'todoE' },
 						desc: { it: 'todo', en: 'todoE' },
 						extra: [],
