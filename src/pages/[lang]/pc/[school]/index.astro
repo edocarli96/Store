@@ -2,7 +2,6 @@
 import MultipleSelectionPage from '~/layouts/MultipleSelectionPage.astro';
 import { Languages, LanguageString, Schools, SchoolToPCs } from '~/utils/types';
 import { getPCmap } from '~/utils/utils';
-import { selectLanguage } from '~/utils/types';
 
 export async function getStaticPaths() {
 	let toReturn: { params: { school: string; lang: string }; props: { school: string; language: string } }[] = [];
@@ -36,18 +35,29 @@ if (this_school == null) {
 const coursesFiltered = this_school.courses.filter(
 	(x) =>
 		x != null &&
-		(this_school?.courses
-			.find((_course) => selectLanguage(language, _course.course) == selectLanguage(language, x.course))
-			?.pcs.filter((pc) => pc.complete).length ?? 0) > 0
+		(this_school?.courses.filter((_course) => {
+			for (let i = 0; i < _course.course.length; i++) {
+				var a1 = _course.course[i];
+				for (let j = 0; j < x.course.length; j++) {
+					var a2 = x.course[j];
+					if (a1.title == a2.title) {
+						var pc = _course.pcs.filter((pc) => pc.complete).length ?? 0;
+						return pc > 0;
+					}
+				}
+			}
+
+			return false;
+		}).length ?? 0) > 0
 );
 
 const buttons: { title: LanguageString; text: LanguageString; path: string }[] = coursesFiltered
 	.map((course) => {
-		return course.slug.map((slugCurrent) => {
+		return course.course.map((slugCurrent) => {
 			return {
-				title: course.course,
+				title: slugCurrent.title,
 				text: course.desc,
-				path: slugCurrent,
+				path: slugCurrent.slug,
 			};
 		});
 	})

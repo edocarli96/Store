@@ -55,8 +55,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 				school: 'ieee',
 				courses: [
 					{
-						slug: ['info'],
-						course: { it: 'Informatica 🖥', en: 'Computer Science 🖥' },
+						course: [{ slug: 'info', title: { it: 'Informatica 🖥', en: 'Computer Science 🖥' } }],
 						desc: { it: 'Ingegneria Informatica', en: 'Computer Science Engineering' },
 						extra: ['Ad informatica il software più pesante, prestazionalmente, è Vivado'],
 						pcs: [
@@ -78,8 +77,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: ['management'],
-						course: { it: 'Gestionale 📊', en: 'Management 📊' },
+						course: [{ slug: 'management', title: { it: 'Gestionale 📊', en: 'Management 📊' } }],
 						desc: { it: 'Ingegneria Gestionale', en: 'Management Engineering' },
 						extra: [],
 						pcs: [
@@ -101,8 +99,11 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: ['aerospace', 'energy', 'mechanical'],
-						course: { it: 'Aerospaziale, Energetica, Meccanica 🚀🛠', en: 'Aerospace, Energy, Mechanical 🚀🛠' },
+						course: [
+							{ slug: 'aerospace', title: { it: 'Aerospaziale 🚀', en: 'Aerospace 🚀' } },
+							{ slug: 'energy', title: { it: 'Energetica 🔋', en: 'Energy 🔋' } },
+							{ slug: 'mechanical', title: { it: 'Meccanica 🛠', en: 'Mechanical 🛠' } },
+						],
 						desc: {
 							it: 'Ingegneria Aerospaziale, Energetica, Meccanica',
 							en: 'Aerospace, Energy, Mechanical Engineering',
@@ -127,8 +128,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: ['biomedical'],
-						course: { it: 'Biomedica 🧬', en: 'Biomedical 🧬' },
+						course: [{ slug: 'biomedical', title: { it: 'Biomedica 🧬', en: 'Biomedical 🧬' } }],
 						desc: { it: 'Ingegneria Biomedica', en: 'Biomedical Engineering' },
 						extra: [],
 						pcs: [
@@ -150,8 +150,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: ['electrical'],
-						course: { it: 'Elettrica 💡', en: 'ELectrical 💡' },
+						course: [{ slug: 'electrical', title: { it: 'Elettrica 💡', en: 'Electrical 💡' } }],
 						desc: { it: 'Ingegneria Elettrica', en: 'Electrical Engineering' },
 						extra: [],
 						pcs: [
@@ -173,8 +172,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: ['electronics'],
-						course: { it: 'Elettronica 🔌', en: 'ELectronics 🔌' },
+						course: [{ slug: 'electronics', title: { it: 'Elettronica 🔌', en: 'Electronics 🔌' } }],
 						desc: { it: 'Ingegneria Elettronica', en: 'Electronics Engineering' },
 						extra: [],
 						pcs: [
@@ -196,8 +194,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: ['physics'],
-						course: { it: 'Fisica 🧲', en: 'Physics 🧲' },
+						course: [{ slug: 'physics', title: { it: 'Fisica 🧲', en: 'Physics 🧲' } }],
 						desc: { it: 'Ingegneria Fisica', en: 'Physics Engineering' },
 						extra: [],
 						pcs: [
@@ -219,8 +216,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: ['mathematical'],
-						course: { it: 'Matematica 🧮', en: 'Mathematical 🧮' },
+						course: [{ slug: 'mathematical', title: { it: 'Matematica 🧮', en: 'Mathematical 🧮' } }],
 						desc: { it: 'Ingegneria Matematica', en: 'Mathematical Engineering' },
 						extra: [],
 						pcs: [
@@ -242,8 +238,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: ['chemical'],
-						course: { it: 'Chimica ⚗️', en: 'Chemical ⚗️' },
+						course: [{ slug: 'chemical', title: { it: 'Chimica ⚗️', en: 'Chemical ⚗️' } }],
 						desc: { it: 'Ingegneria Chimica', en: 'Chemical Engineering' },
 						extra: [],
 						pcs: [
@@ -265,8 +260,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: ['mat&nano'],
-						course: { it: 'Mat&Nano 🔬', en: 'Mat&Nano 🔬' },
+						course: [{ slug: 'mat&nano', title: { it: 'Mat&Nano 🔬', en: 'Mat&Nano 🔬' } }],
 						desc: {
 							it: 'Ingegneria dei Materiali e delle Nanotecnologie',
 							en: 'Materials Engineering and Nanotechnology',
@@ -291,8 +285,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: ['automation'],
-						course: { it: 'Automazione  🤖', en: 'Automation  🤖' },
+						course: [{ slug: 'automation', title: { it: 'Automazione 🤖', en: 'Automation 🤖' } }],
 						desc: { it: 'Ingegneria dell" automazione', en: 'Automation Engineering' },
 						extra: [],
 						pcs: [
@@ -314,8 +307,12 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: ['industrial production'],
-						course: { it: 'Produzione Industriale 🏭', en: 'Industrial Production  🏭' },
+						course: [
+							{
+								slug: 'industrial production',
+								title: { it: 'Produzione Industriale 🏭', en: 'Industrial Production 🏭' },
+							},
+						],
 						desc: { it: 'Ingegneria della produzione industriale', en: 'Industrial Production Engineering' },
 						extra: [],
 						pcs: [
@@ -342,8 +339,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 				school: 'design',
 				courses: [
 					{
-						slug: ['fashion'],
-						course: { it: 'Design della moda 👗', en: 'Fashion design 👗' },
+						course: [{ slug: 'fashion', title: { it: 'Design della moda 👗', en: 'Fashion design 👗' } }],
 						desc: { it: 'Design della moda', en: 'Fashion design' },
 						extra: [],
 						pcs: [
@@ -363,8 +359,9 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 						],
 					},
 					{
-						slug: ['communication'],
-						course: { it: 'Design della comunicazione 📣', en: 'Communication design 📣' },
+						course: [
+							{ slug: 'communication', title: { it: 'Design della comunicazione 📣', en: 'Communication design 📣' } },
+						],
 						desc: { it: 'Design della comunicazione', en: 'Communication design' },
 						extra: [],
 						pcs: [
@@ -442,8 +439,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 				school: 'auic',
 				courses: [
 					{
-						slug: ['todo'],
-						course: { it: 'todo', en: 'todoE' },
+						course: [{ slug: 'todo', title: { it: 'todo', en: 'todoEng' } }],
 						desc: { it: 'todo', en: 'todoE' },
 						extra: [],
 						pcs: [
@@ -467,8 +463,7 @@ export async function getPCmap(): Promise<SchoolToPCs> {
 				school: 'icat',
 				courses: [
 					{
-						slug: ['todo'],
-						course: { it: 'todo', en: 'todoE' },
+						course: [{ slug: 'todo', title: { it: 'todo', en: 'todoEng' } }],
 						desc: { it: 'todo', en: 'todoE' },
 						extra: [],
 						pcs: [

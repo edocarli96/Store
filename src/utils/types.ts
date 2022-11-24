@@ -29,9 +29,13 @@ export interface SchoolCourse {
 	courses: CourseToPC[];
 }
 
+export interface CourseSlug {
+	slug: string;
+	title: LanguageString;
+}
+
 export interface CourseToPC {
-	slug: string[];
-	course: LanguageString;
+	course: CourseSlug[];
 	desc: LanguageString;
 	pcs: PC[];
 	extra: string[];

@@ -10,7 +10,7 @@ const { language, school, course } = Astro.props;
 export async function getStaticPaths() {
 	const schoolsToPCs = await getPCmap();
 	let toReturn: {
-		params: { school: string; lang: string; course: string[] };
+		params: { school: string; lang: string; course: string };
 		props: { school: string; language: string; course: string };
 	}[] = [];
 	for (let index = 0; index < schoolsToPCs.schools.length; index++) {
@@ -19,18 +19,21 @@ export async function getStaticPaths() {
 		for (let e = 0; e < _school.courses.length; e++) {
 			const _course = _school.courses[e];
 			for (let y = 0; y < Languages.values().length; y++) {
-				toReturn.push({
-					params: {
-						school: _school.school,
-						course: _course.slug,
-						lang: Languages.values()[y],
-					},
-					props: {
-						school: _school.school,
-						course: selectLanguage(Languages.values()[y], _course.course),
-						language: Languages.values()[y],
-					},
-				});
+				for (let g = 0; g < _course.course.length; g++) {
+					let gCourse = _course.course[g];
+					toReturn.push({
+						params: {
+							school: _school.school,
+							course: gCourse.slug,
+							lang: Languages.values()[y],
+						},
+						props: {
+							school: _school.school,
+							course: selectLanguage(Languages.values()[y], _course.course[g].title),
+							language: Languages.values()[y],
+						},
+					});
+				}
 			}
 		}
 	}
@@ -42,24 +45,33 @@ let this_school = schoolsToPCs.schools.find((schools) => schools.school == schoo
 if (this_school == null) {
 	throw new Error('PC Map is invalid', this_school);
 }
-let this_course = this_school.courses.find((_course) => selectLanguage(language, _course.course) == course);
+let this_course = this_school.courses.find((_course) => {
+	for (let i = 0; i < _course.course.length; i++) {
+		var a1 = _course.course[i];
+		if (selectLanguage(language, a1.title) == course) {
+			return true;
+		}
+	}
+
+	return false;
+});
 if (this_course == null) {
 	throw new Error('PC Map is invalid', this_course);
 }
-const main_title = this_course.course;
+const main_title = this_course.course[0]; //todo
 const main_text = this_course.desc;
 
 const pcs = this_course.pcs;
 const extra = this_course.extra;
 ---
 
-<Base title={selectLanguage(language, main_title)} language={language}>
+<Base title={selectLanguage(language, main_title.title)} language={language}>
 	<div class="justify-items-center">
 		<section class="bg-white dark:bg-gray-900">
 			<div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
 				<div class="max-w-screen-md">
 					<h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-						{selectLanguage(language, main_title)}
+						{selectLanguage(language, main_title.title)}
 					</h2>
 					<p class="text-gray-500 sm:text-xl dark:text-gray-400">{selectLanguage(language, main_text)}</p>
 				</div>
