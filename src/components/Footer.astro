@@ -1,5 +1,6 @@
 ---
 import { Languages } from '../utils/types';
+import PriceTag from './PriceTag.astro';
 
 export interface Props {
 	language: Languages;
@@ -67,4 +68,36 @@ const url = Astro.url;
 			</li>
 		</ul>
 	</div>
+	<div style="padding-top:50px;"></div>
+	<div class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400 mr-4 md:mr-6">
+		<div class="border px-3 py-3 rounded-xl">
+			<table>
+				<tr
+					><td class="px-3 max-w-xs">
+						Il sito fa uso di simboli al fine di semplificare la visione dei prodotti, qui in allegato la tabella
+						riassuntiva:
+					</td>
+				</tr>
+				<tr><td>&nbsp;</td></tr>
+				<tr
+					><td>
+						<table class="table-fixed center">
+							<tr class="text-center px-3">
+								<td class="px-3 font-semibold">Simbolo</td>
+								<td class="px-3 font-semibold">Spiegazione</td>
+							</tr>
+							<tr>
+								<td class="px-3"><PriceTag price={{ value: 99.99, time: '2022-12-31T21:59:59' }} /></td>
+								<td class="px-3 max-w-xs"
+									>Si intende che il prezzo di quel prodotto, alla data indicata, è quello indicato. Il prezzo può
+									subire variazioni nel tempo.</td
+								>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div style="padding-top:10px;"></div>
 </footer>
